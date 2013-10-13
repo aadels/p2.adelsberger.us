@@ -33,7 +33,7 @@ class MyClass{
  class MyOtherClass extends MyClass{
 
  	public function __construct(){
-
+ 		parent::__construct(); //call teh parent class'sconstructor
  		echo "A new constructor in" . __CLASS__ ." . <br/>";
  	}
 
