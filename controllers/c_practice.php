@@ -14,6 +14,7 @@ class practice_controller extends base_controller{
 
 }
 public function test2(){
+	//Static
 	echo Time::now();
 
 }
