@@ -11,11 +11,19 @@ class MyClass{
 		return $this->prop1 . "<br />";
 	}
 }
+//Create two objects
 $obj = new MyClass;
+$obj2 = new MyClass;
 
+// Get the value of $prop1 for both objects
+echo $obj->getProperty();
+echo $obj2-> getProperty();
 
-echo $obj->getProperty(); //get the property value
-$obj->setProperty("I'm a NEW property Value!"); //set a new value
-echo $obj->getProperty(); //Read out to show change
+//Set new values for both objects
+$obj setProperty("I'm THE new property value!");
+$obj2 setProperty("I belong to a second instance!");
 
+//Output both objects' $prop1 value
+echo $obj->getProperty();
+echo $obj2->getProperty();
 ?>
