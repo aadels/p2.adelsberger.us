@@ -24,7 +24,7 @@ class MyClass{
 		$this->prop1 = $newval;
 	}
 	
-	public function getProperty(){
+	protected function getProperty(){
 
 		return $this->prop1 . "<br />";
 	}
@@ -46,9 +46,9 @@ class MyClass{
  $newobj = new MyOtherClass;
 
  //Output object as a string
- echo $newobj->newMethod();
+ //echo $newobj->newMethod();
 
- //Use a method from eth parent class
+ //Use a method from the parent class
  echo $newobj->getProperty();
 
 ?>
