@@ -34,12 +34,12 @@ class MyClass{
 
  	public function __construct(){
 
- 		echo "A new constructor in " . __CLASS__ ." . <br/>";
+ 		echo "A new constructor in" . __CLASS__ ." . <br/>";
  	}
 
  	public function newMethod(){
 
- 		echo "from a new method in " .__CLASS__ . "<br />";
+ 		echo "From a new method in" . __CLASS__ . " .<br />";
  	}
  }
 //Create a new object
