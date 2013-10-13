@@ -29,11 +29,17 @@ class MyClass{
 		return $this->prop1 . "<br />";
 	}
 }
+ 
  class MyOtherClass extends MyClass{
+
+ 	public function __construct(){
+
+ 		echo "A new constructor in " . __CLASS__ ." . <br/>";
+ 	}
 
  	public function newMethod(){
 
- 		echo "From new method in " . __CLASS__ ." . <br/>";
+ 		echo "from a new method in " .__CLASS__ . "<br />";
  	}
  }
 //Create a new object
