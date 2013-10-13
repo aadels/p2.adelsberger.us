@@ -54,6 +54,6 @@ class MyClass{
  //echo $newobj->newMethod();
 
 // Attempt to call a protected method  
- echo $newobj->getProperty();
+ echo $newobj->callProtected();
 
 ?>
