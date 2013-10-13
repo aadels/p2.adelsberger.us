@@ -33,7 +33,7 @@ class MyClass{
  class MyOtherClass extends MyClass{
 
  	public function __construct(){
- 		parent::__construct(); //call teh parent class'sconstructor
+ 		parent::__construct(); //call the parent class's constructor
  		echo "A new constructor in" . __CLASS__ ." . <br/>";
  	}
 
@@ -42,7 +42,7 @@ class MyClass{
  		echo "From a new method in" . __CLASS__ . " .<br />";
  	}
 
- 	public function  callProtected(){
+ 	private function  callProtected(){
 
  		return $this->getProperty();
  	}
