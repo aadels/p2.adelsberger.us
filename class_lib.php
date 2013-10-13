@@ -12,6 +12,12 @@ class MyClass{
 
 		echo 'The class "', __CLASS__.'" was destroyed.<br />';
 	}
+
+	public function __toString(){
+
+		echo "using the toString method: ";
+		return $this->getProperty();
+	}
 	
 	public function setProperty($newval){
 		
