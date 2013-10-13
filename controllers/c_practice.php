@@ -6,9 +6,9 @@ class practice_controller extends base_controller{
 	require(APP_PATH. '/libraries/image.php');
 	//echo DOC_ROOT."<br>";
 
-	$imageObj = new Image('http://web.mit.edu/aadels/Public/appeal_images/_DSC0368.jpg/311,466')
+	$imageObj = new Image('http://placekitten.com/1000/1000');
 
-	$imageObj ->resize(155,233);
+	$imageObj ->resize(400,400);
 
 	$imageObj-> display();
 
