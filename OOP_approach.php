@@ -17,7 +17,7 @@ class Person{
 	  	$this->_job = $newjob;
 	 }
 
-	 publib function happyBirthday(){
+	 public function happyBirthday(){
 
 	 	++$this->_age;
 	 }
