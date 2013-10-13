@@ -27,8 +27,8 @@ class MyClass{
 //Create new object
 $obj = new MyClass;
 
-//Get value of $prop1
-echo $obj->getProperty();
+//output the object as a string
+echo $obj;
 
 //Destroy the object
 unset($obj);
