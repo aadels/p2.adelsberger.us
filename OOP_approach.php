@@ -10,7 +10,7 @@ class Person{
 
 		$this-> _name = $name;
 		$this-> _job = $job;
-		$this-> _age - $age;
+		$this-> _age = $age;
 	}
 	 public function changeJob($newjob){
 
