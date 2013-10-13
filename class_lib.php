@@ -30,6 +30,9 @@ $obj = new MyClass;
 //Get value of $prop1
 echo $obj->getProperty();
 
+//Destroy the object
+unset($obj);
+
 //Output a message at the end of the file
 echo "End of file. <br />";
 ?>
