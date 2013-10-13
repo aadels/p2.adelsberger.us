@@ -14,7 +14,7 @@ class MyClass{
 $obj = new MyClass;
 
 
-echo $obj->getPrpoerty(); //get the property value
+echo $obj->getProperty(); //get the property value
 $obj->setProperty("I'm a NEW property Value!"); //set a new value
 echo $obj->getProperty(); //Read out to show change
 
