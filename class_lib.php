@@ -3,27 +3,26 @@
 class MyClass{
 	public $prop1 = "I'm a class property!!"; 
 
+	public function __construct(){
+
+		echo 'The class "', __CLASS__,'" was initiated!<br ?>';
+	}
+
 	public function setProperty($newval){
 		$this->prop1 = $newval;
 	}
-
 	public function getProperty(){
+
 		return $this->prop1 . "<br />";
 	}
 }
-//Create two objects
+
+//Create new object
 $obj = new MyClass;
-$obj2 = new MyClass;
 
-// Get the value of $prop1 for both objects
+//Get value of $prop1
 echo $obj->getProperty();
-echo $obj2-> getProperty();
 
-//Set new values for both objects
-$obj->setProperty("I'm THE new property value!");
-$obj2->setProperty("I belong to a second instance!");
-
-//Output both objects' $prop1 value
-echo $obj->getProperty();
-echo $obj2->getProperty();
+//Output a message at the end of the file
+echo "End of file. <br />";
 ?>
