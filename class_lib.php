@@ -3,7 +3,7 @@
 class MyClass{
 	public $prop1 = "I'm a class property!!"; 
 
-	public static $couunt = 0;
+	public static $count = 0;
 
 	public function __construct(){
 
@@ -49,7 +49,7 @@ class MyClass{
  		echo "From a new method in" . __CLASS__ . " .<br />";
  	}
 
- 	public function  callProtected(){
+ 	public function callProtected(){
 
  		return $this->getProperty();
  	}
