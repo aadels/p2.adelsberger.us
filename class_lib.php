@@ -41,6 +41,11 @@ class MyClass{
 
  		echo "From a new method in" . __CLASS__ . " .<br />";
  	}
+
+ 	public function  callProtected(){
+
+ 		return $this->getProperty();
+ 	}
  }
 //Create a new object
  $newobj = new MyOtherClass;
@@ -48,7 +53,7 @@ class MyClass{
  //Output object as a string
  //echo $newobj->newMethod();
 
- //Use a method from the parent class
+// Attempt to call a protected method  
  echo $newobj->getProperty();
 
 ?>
