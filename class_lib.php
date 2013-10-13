@@ -37,7 +37,7 @@ class MyClass{
  	}
  }
 //Create a new object
- $newobj = new MyOtherClass
+ $newobj = new MyOtherClass;
 
  //Output object as a string
  echo $newobj->newMethod();
