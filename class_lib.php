@@ -20,8 +20,8 @@ echo $obj->getProperty();
 echo $obj2-> getProperty();
 
 //Set new values for both objects
-$obj setProperty("I'm THE new property value!");
-$obj2 setProperty("I belong to a second instance!");
+$obj->setProperty("I'm THE new property value!");
+$obj2->setProperty("I belong to a second instance!");
 
 //Output both objects' $prop1 value
 echo $obj->getProperty();
