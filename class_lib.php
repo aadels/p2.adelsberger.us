@@ -29,16 +29,20 @@ class MyClass{
 		return $this->prop1 . "<br />";
 	}
 }
+ class MyOtherClass extends MyClass{
 
-//Create new object
-$obj = new MyClass;
+ 	public function newMethod(){
 
-//output the object as a string
-echo $obj;
+ 		echo "From new method in " . __CLASS__ ." . <br/>";
+ 	}
+ }
+//Create a new object
+ $newobj = new MyOtherClass
 
-//Destroy the object
-unset($obj);
+ //Output object as a string
+ echo $newobj->newMethod();
 
-//Output a message at the end of the file
-echo "End of file. <br />";
+ //Use a method from eth parent class
+ echo $newobj->getProperty();
+
 ?>
