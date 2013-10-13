@@ -33,8 +33,8 @@ class MyClass{
 
 	public static function plusOne(){
 
-		return "The count is: " . ++self::$count .".<br />"
-	};
+		return "The count is: " . ++self::$count .".<br />";
+	}
 }
  
  class MyOtherClass extends MyClass{
