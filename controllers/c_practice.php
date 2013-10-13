@@ -2,8 +2,8 @@
 class practice_controller extends base_controller{
 	
 	public function test1(){
-		require ("")
-	echo (APP_PATH. 'image.php');
+		
+	require(APP_PATH. 'image.php');
 	//echo DOC_ROOT."<br>";
 
 	$imageObj = new Image('http://web.mit.edu/aadels/Public/appeal_images/_DSC0368.jpg/311,466')
