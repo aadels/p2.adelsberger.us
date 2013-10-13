@@ -3,6 +3,8 @@
 class MyClass{
 	public $prop1 = "I'm a class property!!"; 
 
+	public static $couunt = 0;
+
 	public function __construct(){
 
 		echo 'The class "', __CLASS__,'" was initiated!<br ?>';
@@ -28,6 +30,11 @@ class MyClass{
 
 		return $this->prop1 . "<br />";
 	}
+
+	public static function plusOne(){
+
+		return "The count is: " . ++self::$count .".<br />"
+	};
 }
  
  class MyOtherClass extends MyClass{
@@ -42,18 +49,15 @@ class MyClass{
  		echo "From a new method in" . __CLASS__ . " .<br />";
  	}
 
- 	private function  callProtected(){
+ 	public function  callProtected(){
 
  		return $this->getProperty();
  	}
  }
-//Create a new object
- $newobj = new MyOtherClass;
-
- //Output object as a string
- //echo $newobj->newMethod();
-
-// Attempt to call a protected method  
- echo $newobj->callProtected();
+do{
+	//Call plusOne without instantiating MyClass
+	echo MyClass::plusOne();
+}
+while (MyClass::$count <10);
 
 ?>
