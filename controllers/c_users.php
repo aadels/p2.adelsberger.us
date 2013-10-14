@@ -28,6 +28,13 @@ class users_controller extends base_controller {
         $content = View::instance('v_users_profile');
         $content->user_name = $user_name;
         $this->template->title = "Profile";
+
+        $client_files_head = Array(
+            '/css/profiles.css',
+            '/css/master.css'
+            );
+        $this->$template->client_files_head = Utils::load_client_files($client_files_head);
+        
         //Pass the data to the view
         $this->template->content = $content;
         

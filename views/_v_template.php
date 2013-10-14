@@ -7,7 +7,7 @@
 					
 	<!-- Controller Specific JS/CSS -->
 	<?php if(isset($client_files_head)) echo $client_files_head; ?>
-	//css and javascript go here
+	<!--css here-->
 </head>
 
 <body>	
@@ -15,5 +15,7 @@
 	<?php if(isset($content)) echo $content; ?>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+	<!--javascript at end of body-->
+
 </body>
 </html>
