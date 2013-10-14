@@ -30,7 +30,7 @@ class users_controller extends base_controller {
         $this->template->title = "Profile";
 
         $client_files_head = Array(
-            '/css/profiles.css',
+            '/css/profile.css',
             '/css/master.css'
             );
         $this->$template->client_files_head = Utils::load_client_files($client_files_head);
