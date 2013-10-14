@@ -32,7 +32,7 @@ class users_controller extends base_controller {
             '/css/profile.css',
             '/css/master.css'
             );
-        $this->$template->client_files_head = Utils::load_client_files($client_files_head);
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);
         
         //Pass the data to the view
         $this->template->content->user_name = $user_name;
