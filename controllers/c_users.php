@@ -27,7 +27,6 @@ class users_controller extends base_controller {
         $view = View:: instance('v_users_profile');
 
         $view->user_name = $user_name;
-        $view->color = "red";
 
         echo $view;
 
