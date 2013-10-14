@@ -25,9 +25,8 @@ class users_controller extends base_controller {
     public function profile($user_name = NULL) {
 
         //Set up the View
-        $content = View::instance('v_users_profile');
-        $content->user_name = $user_name;
-        $this->template->title = "Profile";
+        $this->template->content = View::instance('v_users_profile');
+        $this->template->title = "Profile"; 
 
         $client_files_head = Array(
             '/css/profile.css',
@@ -36,7 +35,7 @@ class users_controller extends base_controller {
         $this->$template->client_files_head = Utils::load_client_files($client_files_head);
         
         //Pass the data to the view
-        $this->template->content = $content;
+        $this->template->content->user_name = $user_name;
         
         //Display the view
         echo $this->template;
