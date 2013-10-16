@@ -1,22 +1,9 @@
 <?php
 class practice_controller extends base_controller{
+	# Our SQL command
+$q = "INSERT INTO users SET 
+    first_name = 'Sam', 
+    last_name = 'Seaborn',
+    email = 'seaborn@whitehouse.gov'";
 	
-	public function test1(){
-		
-	require(APP_PATH. '/libraries/image.php');
-	//echo DOC_ROOT."<br>";
-
-	$imageObj = new Image('http://placekitten.com/1000/1000');
-
-	$imageObj ->resize(400,400);
-
-	$imageObj-> display();
-
-}
-public function test2(){
-	//Static
-	echo Time::now();
-
-}
-
 }
