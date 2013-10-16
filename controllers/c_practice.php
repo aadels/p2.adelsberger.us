@@ -10,12 +10,8 @@ $q = "INSERT INTO users SET
     email = 'seaborn@whitehouse.gov'";
 
     echo $q;
-
-    $q = "UPDATE users;  
-    
-
  
 
 # Run the command
-echo DB::instance(DB_NAME)->query($q);
+DB::instance(DB_NAME)->query($q);
 }
