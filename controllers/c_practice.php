@@ -11,6 +11,11 @@ $q = "INSERT INTO users SET
 
     echo $q;
 
+    $q = "UPDATE users;  
+    
+
+ 
+
 # Run the command
 echo DB::instance(DB_NAME)->query($q);
 }
