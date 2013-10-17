@@ -40,12 +40,17 @@ class users_controller extends base_controller {
         //confirm signup
         echo 'You\'re signed up.';        
     }
-    public function test_db(){
-        echo "This is a test";
+    //public function test_db(){
+
     }
 
     public function login() {
-        echo "This is the login page";
+         //Setup view
+        $this->template->content = View::instance('v_users_login');
+        $this->template->title = "Login";
+
+        //Render templae
+        echo $this->template;
     }
 
     public function logout() {
