@@ -55,7 +55,7 @@ class users_controller extends base_controller {
 
     public function p_login(){
         //Sanitize user input data
-        $_POST = DB::instance(DB_MANE)->sanitize($_POST);
+        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
         //Hash submitted PW so we can compare it against one in the database
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
@@ -89,8 +89,8 @@ class users_controller extends base_controller {
             setcookie("token", $token, strtotime('+1 year'), '/');
 
             //Send them to the main page - or wherever you wantthem to go
-            //ROUTER::redirect("/");
-            echo 'You\'re logged in.'; 
+            ROUTER::redirect("/");
+
         }
          
     }
