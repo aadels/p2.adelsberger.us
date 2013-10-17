@@ -8,7 +8,7 @@ $q = "INSERT INTO users SET
     email = 'seaborn@whitehouse.gov'";
 
 # Run the command
-echo query($q);
+echo ($q);
 
 }
 ?>
