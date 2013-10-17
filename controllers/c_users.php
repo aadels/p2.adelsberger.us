@@ -70,14 +70,8 @@ class users_controller extends base_controller {
          $token = DB::instance(DB_NAME)->select_field($q);
 
          //If no matching token found in DB, login failed
-         if(!$token){
-
-            //Send user back to the login page
-            Router::redirect("/users/login/");
-
-        //if token found, login succeeded!
-        } else {
-             /* 
+         if($token){
+            /* 
             Store this token in a cookie using setcookie()
             Important Note: *Nothing* else can echo to the page before setcookie is called
              Not even one single white space.
@@ -88,8 +82,15 @@ class users_controller extends base_controller {
             */
             setcookie("token", $token, strtotime('+1 year'), '/');
 
-            //Send them to the main page - or wherever you wantthem to go
-            ROUTER::redirect("/");
+            //login success
+            echo "You are logged in!";
+
+        //if token found, login succeeded!
+        } else {
+            //Send user back to the login page
+            //Router::redirect("/users/login/");
+            echo "Login failed!";
+             
 
         }
          
