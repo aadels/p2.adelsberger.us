@@ -88,7 +88,7 @@ class users_controller extends base_controller {
         //if token found, login succeeded!
         } else {
             //Send user back to the login page
-            Router::redirect("/login/");
+            Router::redirect("users/login/");
         }
          
     }
