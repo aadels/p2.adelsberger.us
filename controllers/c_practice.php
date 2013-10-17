@@ -1,6 +1,6 @@
 <?php
 class practice_controller extends base_controller{
-public function test_db(){
+//public function test_db(){
 # Our SQL command
 $q = "INSERT INTO users SET 
     first_name = 'Sam', 
