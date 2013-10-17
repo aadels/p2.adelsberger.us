@@ -10,6 +10,7 @@
 
 	<br><br>
 
-	<input type='sumbit' value='Log in'>
+	<input type='submit' value='Log in'>
+
 
 </form>
