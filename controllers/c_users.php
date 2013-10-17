@@ -101,15 +101,23 @@ class users_controller extends base_controller {
 
     public function profile($user_name = NULL) {
 
+        //If user is blank, they are not logged in. Redirect them to the login page
+        if (!$this->user){
+            Router::redirect('/users/login');
+        }
+
+        //If they were not redirected away, continue:
+
         //Set up the View
         $this->template->content = View::instance('v_users_profile');
-        $this->template->title = "Profile"; 
+        $this->template->title = "Profile of".$this->user->first_name; 
 
         //Load client files
         $client_files_head = Array(
             '/css/profile.css',
             '/css/master.css'
             );
+        
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
         
         $client_files_body= Array(
