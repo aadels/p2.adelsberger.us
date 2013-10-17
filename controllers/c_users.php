@@ -40,9 +40,9 @@ class users_controller extends base_controller {
         //confirm signup
         echo 'You\'re signed up.';        
     }
-    //public function test_db(){
+    /*public function test_db(){
 
-    }
+    }*/
 
     public function login() {
          //Setup view
@@ -51,6 +51,47 @@ class users_controller extends base_controller {
 
         //Render templae
         echo $this->template;
+    }
+
+    public function p_login(){
+        //Sanitize user input data
+        $_POST = DB::instance(DB_MANE)->sanitize($_POST);
+
+        //Hash submitted PW so we can compare it against one in the database
+        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+
+        /*Search the DB for this email and PW
+        Retrieve the token if it is available*/
+        $q = "SELECT token 
+        FROM users 
+        WHERE email = '".$_POST['email']."' 
+        AND password = '".$_POST['password']."'";
+
+         $token = DB::instance(DB_NAME)->select_field($q);
+
+         //If no matching token found in DB, login failed
+         if(!$token){
+
+            //Send user back to the login page
+            Router::redirect("/users/login/");
+
+        //if token found, login succeeded!
+        } else {
+             /* 
+            Store this token in a cookie using setcookie()
+            Important Note: *Nothing* else can echo to the page before setcookie is called
+             Not even one single white space.
+            param 1 = name of the cookie
+            param 2 = the value of the cookie
+            param 3 = when to expire
+            param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
+            */
+            setcookie("token", $token, strtotime('+1 year'), '/');
+
+            //Send them to the main page - or wherever you wantthem to go
+            ROUTER::redirect("/");
+        }
+         
     }
 
     public function logout() {
