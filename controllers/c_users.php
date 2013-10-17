@@ -70,7 +70,12 @@ class users_controller extends base_controller {
          $token = DB::instance(DB_NAME)->select_field($q);
 
          //If no matching token found in DB, login failed
-         if($token){
+         if(!$token){
+
+            //Send user back to the login page
+            //echo "Login failed!";
+            Router::redirect("/users/login");
+
             /* 
             Store this token in a cookie using setcookie()
             Important Note: *Nothing* else can echo to the page before setcookie is called
@@ -88,9 +93,20 @@ class users_controller extends base_controller {
 
         //if token found, login succeeded!
         } else {
-            //Send user back to the login page
-            //echo "Login failed!";
-            Router::redirect('/users/login');
+            /* 
+            Store this token in a cookie using setcookie()
+            Important Note: *Nothing* else can echo to the page before setcookie is called
+             Not even one single white space.
+            param 1 = name of the cookie
+            param 2 = the value of the cookie
+            param 3 = when to expire
+            param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
+            */
+            setcookie("token", $token, strtotime('+1 year'), '/');
+
+            //Redirect to wherever you want user to go
+            //echo "You are logged in!";
+            Router::redirect("/");
         }
          
     }
@@ -104,7 +120,7 @@ class users_controller extends base_controller {
         $data = Array("token" => $new_token);
 
         //Do the update
-        DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".$this->user->token."'");
+        DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".signup$this->user->token."'");
 
         //Delete their token cookie by setting to a date in the past - effectively logging them out
         setcookie("token", "", strtotime('-1 year'), '/');
