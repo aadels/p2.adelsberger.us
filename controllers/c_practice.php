@@ -11,3 +11,4 @@ $q = "INSERT INTO users SET
 echo DB::instance(DB_NAME)->query($q);
 
 }
+?>
