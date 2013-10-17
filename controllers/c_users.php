@@ -28,7 +28,9 @@ class users_controller extends base_controller {
         print_r($_POST);
         echo '</pre>';          
     }
-
+    public function test_db(){
+        echo "This is a test";
+    }
 
     public function login() {
         echo "This is the login page";
@@ -65,6 +67,6 @@ class users_controller extends base_controller {
 
     }
 
-    
+
 
 } # end of the class
