@@ -83,14 +83,14 @@ class users_controller extends base_controller {
             setcookie("token", $token, strtotime('+1 year'), '/');
 
             //Redirect to wherever you want user to go
-            echo "You are logged in!";
-            //Router::redirect("/");
+            //echo "You are logged in!";
+            Router::redirect("/");
 
         //if token found, login succeeded!
         } else {
             //Send user back to the login page
-            echo "Login failed!";
-            //Router::redirect('/users/login');
+            //echo "Login failed!";
+            Router::redirect('/users/login');
         }
          
     }
