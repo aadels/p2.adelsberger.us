@@ -24,15 +24,14 @@ class users_controller extends base_controller {
     public function p_signup() {
 
         $_POST['created']  = Time::now();
-        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
-        $_POST['token']    = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-
+        $_POST['modified'] = Time::now();
         
-        echo '<pre>';
+        /*echo '<pre>';
         print_r($_POST);
-        echo '</pre>'; 
+        echo '</pre>'; */
 
-        DB::instance(DB_NAME)->insert_row('users', $_POST);         
+        DB::instance(DB_NAME)->insert_row('users', $_POST); 
+        echo 'You\'re signed up.';        
     }
     public function test_db(){
         echo "This is a test";
