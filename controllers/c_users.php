@@ -35,7 +35,7 @@ class users_controller extends base_controller {
         $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
         
         //Insert user into database
-        $user_id = DB::instance(DB_NAME)->insert_row('users', $_POST); 
+       DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
         //confirm signup
         echo 'You\'re signed up.';        
