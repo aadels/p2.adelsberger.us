@@ -38,7 +38,8 @@ class users_controller extends base_controller {
        DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
         //confirm signup
-        echo 'You\'re signed up.';        
+        //echo 'You\'re signed up.';  
+        Router::redirect('/users/login');      
     }
     /*public function test_db(){
 
