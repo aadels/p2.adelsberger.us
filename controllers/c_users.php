@@ -44,11 +44,13 @@ class users_controller extends base_controller {
 
     }*/
 
-    public function login() {
+    public function login($error = NULL) {
          //Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
 
+        //Pass data to the view
+        $this->template->content->error = $error;
         //Render templae
         echo $this->template;
     }
@@ -74,7 +76,7 @@ class users_controller extends base_controller {
 
             //Send user back to the login page
             //echo "Login failed!";
-            Router::redirect("/users/login");
+            Router::redirect("/users/login/error");
 
             /* 
             Store this token in a cookie using setcookie()
@@ -85,7 +87,7 @@ class users_controller extends base_controller {
             param 3 = when to expire
             param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
             */
-            setcookie("token", $token, strtotime('+1 year'), '/');
+            setcookie("token", $token, strtotime('+2 Weeks'), '/');
 
             //Redirect to wherever you want user to go
             //echo "You are logged in!";
@@ -115,12 +117,12 @@ class users_controller extends base_controller {
         //Generate and save a key for teh next login
         $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
 
-        /*Creath the data array we'll use with th eupdate method
+        /*Create the data array we'll use with the update method
         In this case we're only updating one field, so our arry only has one entry*/
         $data = Array("token" => $new_token);
 
         //Do the update
-        DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".signup$this->user->token."'");
+        DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".$this->user->token."'");
 
         //Delete their token cookie by setting to a date in the past - effectively logging them out
         setcookie("token", "", strtotime('-1 year'), '/');
