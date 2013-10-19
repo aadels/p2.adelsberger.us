@@ -53,7 +53,7 @@ class users_controller extends base_controller {
         //Pass data to the view
         $this->template;
         //Render templae
-        //echo $this->template;
+        echo $this->template;
     }
 
     public function p_login(){
