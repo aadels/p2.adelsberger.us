@@ -77,7 +77,7 @@ class users_controller extends base_controller {
 
             //Send user back to the login page
             //echo "Login failed!";
-            Router::redirect("/users/login/error");
+            Router::redirect("/users/login/");
 
             /* 
             Store this token in a cookie using setcookie()
