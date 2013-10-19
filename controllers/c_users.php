@@ -51,8 +51,8 @@ class users_controller extends base_controller {
         $this->template->title = "Login";
 
         //Pass data to the view
-        $this->template;
-        //Render templae
+        //$this->template;
+        //Render template
         echo $this->template;
     }
 
