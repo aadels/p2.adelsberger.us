@@ -88,7 +88,7 @@ class users_controller extends base_controller {
             param 3 = when to expire
             param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
             */
-            setcookie("token", $token, strtotime('+2 Weeks'), '/');
+            setcookie("token",$token, strtotime('+2 Weeks'), '/');
 
             //Redirect to wherever you want user to go
             //echo "You are logged in!";
