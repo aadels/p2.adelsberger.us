@@ -74,7 +74,7 @@ class users_controller extends base_controller {
          $token = DB::instance(DB_NAME)->select_field($q);
 
          //If no matching token found in DB, login failed
-         if($token == ""){
+         if(!$token){
 
              //Redirect to wherever you want user to go
             //echo "Login failed";
@@ -94,7 +94,7 @@ class users_controller extends base_controller {
             setcookie("token", $token, strtotime('+1 year'), '/');
 
             # Send them to the main page - or whever you want them to go
-            Router::redirect("../");
+            Router::redirect("/");
         }
          
     }
