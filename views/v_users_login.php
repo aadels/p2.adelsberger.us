@@ -4,7 +4,6 @@
 
 	Email<br>
 	<input type='text' name='email'>
-
 	<br><br>
 
 	Password<br>

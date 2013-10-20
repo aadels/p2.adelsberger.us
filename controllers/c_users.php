@@ -57,6 +57,9 @@ class users_controller extends base_controller {
     }
 
     public function p_login(){
+        //Store time data
+        $_POST['last_login']  = Time::now();
+
         //Sanitize user input data
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
@@ -91,8 +94,8 @@ class users_controller extends base_controller {
             setcookie("token",$token, strtotime('+1 year'), '/');
 
             //Redirect to wherever you want user to go
-            //echo "You are logged in!";
-            Router::redirect("/");
+            echo "Login failed";
+            //Router::redirect("/");
 
         //if token found, login succeeded!
         } else {
@@ -108,8 +111,8 @@ class users_controller extends base_controller {
             setcookie("token", $token, strtotime('+1 year'), '/');
 
             //Redirect to wherever you want user to go
-            //echo "You are logged in!";
-            Router::redirect("/");
+            echo "You are logged in!";
+            //Router::redirect("/");
         }
          
     }
@@ -133,7 +136,7 @@ class users_controller extends base_controller {
 
     }
 
-    public function profile($user_name = NULL) {
+    public function profile() {
 
         //If user is blank, they are not logged in. Redirect them to the login page
         if (!$this->user){
