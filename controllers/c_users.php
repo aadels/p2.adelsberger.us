@@ -38,8 +38,8 @@ class users_controller extends base_controller {
        DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
         //confirm signup
-        echo 'You\'re signed up.';  
-        //Router::redirect('/users/login');      
+        //echo 'You\'re signed up.';  
+        Router::redirect('/users/login');      
     }
     /*public function test_db(){
 
@@ -94,7 +94,7 @@ class users_controller extends base_controller {
             setcookie("token", $token, strtotime('+1 year'), '/');
 
             # Send them to the main page - or whever you want them to go
-            Router::redirect("/");
+            Router::redirect("../");
         }
          
     }
