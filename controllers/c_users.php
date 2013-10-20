@@ -50,15 +50,13 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
 
-        //Pass data to the view
-        //$this->template;
         //Render template
         echo $this->template;
     }
 
     public function p_login(){
         //Store time data
-        $_POST['last_login']  = Time::now();
+        //$_POST['last_login']  = Time::now();
 
         //Sanitize user input data
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
@@ -78,31 +76,16 @@ class users_controller extends base_controller {
          //If no matching token found in DB, login failed
          if(!$token){
 
-            //Send user back to the login page
-            //echo "Login failed!";
+             //Redirect to wherever you want user to go
+            //echo "Login failed";
             Router::redirect("/users/login/");
-
-            /* 
-            Store this token in a cookie using setcookie()
-            Important Note: *Nothing* else can echo to the page before setcookie is called
-             Not even one single white space.
-            param 1 = name of the cookie
-            param 2 = the value of the cookie
-            param 3 = when to expire
-            param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
-            */
-            setcookie("token",$token, strtotime('+1 year'), '/');
-
-            //Redirect to wherever you want user to go
-            echo "Login failed";
-            //Router::redirect("/");
 
         //if token found, login succeeded!
         } else {
             /* 
             Store this token in a cookie using setcookie()
             Important Note: *Nothing* else can echo to the page before setcookie is called
-             Not even one single white space.
+            Not even one single white space.
             param 1 = name of the cookie
             param 2 = the value of the cookie
             param 3 = when to expire
@@ -110,9 +93,8 @@ class users_controller extends base_controller {
             */
             setcookie("token", $token, strtotime('+1 year'), '/');
 
-            //Redirect to wherever you want user to go
-            echo "You are logged in!";
-            //Router::redirect("/");
+            # Send them to the main page - or whever you want them to go
+            Router::redirect("/");
         }
          
     }
