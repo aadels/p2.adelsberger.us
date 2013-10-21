@@ -45,10 +45,13 @@ class users_controller extends base_controller {
 
     }*/
 
-    public function login() {
+    public function login($error = NULL) {
          //Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
+
+        //Pass datat to the view
+        $this->template->content->error = $error;
 
         //Render template
         echo $this->template;
