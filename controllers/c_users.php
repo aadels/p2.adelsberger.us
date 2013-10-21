@@ -37,10 +37,6 @@ class users_controller extends base_controller {
         //Insert user into database
         DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
-        //Save login info to cookies
-        //$token = $_POST['token']; 
-        setcookie("token", $token, strtotime('+1 year'), '/');  
-        
         //confirm signup
         //echo 'You\'re signed up.';  
         Router::redirect('/users/login');      
