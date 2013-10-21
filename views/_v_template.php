@@ -24,7 +24,7 @@
 			<a href='users/signup'>Sign up</a>
 			<a href='users/login'>Log in</a>
 
-		<php endif; ?>
+		<?php endif; ?>
 	</div>
 
 
