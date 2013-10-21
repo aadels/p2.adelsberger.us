@@ -38,7 +38,7 @@ class users_controller extends base_controller {
         DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
         //Save login info to cookies
-        $token = $_POST['token']; 
+        //$token = $_POST['token']; 
         setcookie("token", $token, strtotime('+1 year'), '/');  
         
         //confirm signup
