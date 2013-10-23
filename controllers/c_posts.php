@@ -36,6 +36,39 @@ class posts_controller extends base_controller{
 
 		#Verify posting
 		echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+	}
+
+	public function users() {
+
+		#Set up the view
+		$this->template->content = View::instance("v_posts_users");
+		$this->template->title = "Users";
+
+		#Build a query to get all of the users
+		$q = "SELECT * FROM users";
+
+		#Execute the query to get all of teh users.
+		#Stor the resulting arraty in the variable $users
+		$users = DB::instance(DB_NAME)->select_rows($q);
+
+		#Build the query to figure outwhat connections the user already has
+		$q = "SELECT * FROM users_users WHERE user_id = ".$this->user->user_id;
+
+		#Execute this query with the select_array method.
+		#The select_array will return ourresults in an array and use the "users_id Followed" field as the index.
+		#This will come in handy when we get to the view. 
+		#Store the results (an array) in teh variable $connections
+
+		$connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
+
+		#Pass data (users and connections) to the view
+		$this->template->content->users 		= $users;
+		$this->template->content->connections 	= $connections;
+
+		#Render the view
+		echo $this->template;
+
+
 
 	}
 		
