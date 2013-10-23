@@ -7,6 +7,8 @@ class users_controller extends base_controller {
     } 
 
     public function index() {
+        #Setup View
+        $this->template->title   = "Welcome to UFP!";
         echo "This is the index page";
     }
 
