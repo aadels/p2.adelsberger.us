@@ -2,6 +2,7 @@
 
 	<!-- Print user's name -->
 	<?=$user['first_name']?> <?=$user['last_name']?>
+	<br><br>
 
 	<!-- If there is a connection with this user, sho an unfollow link -->
 	<? if(isset($connections[$user['user_id']])): ?>
@@ -15,5 +16,5 @@
 	<br><br>
 
 <? endforeach; ?>
-	
+
 
