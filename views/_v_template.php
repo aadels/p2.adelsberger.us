@@ -21,7 +21,7 @@
 
 		<!-- Menu for users who are not logged in-->
 		<?php else: ?>
-			<a href='users/signup'>Sign up</a>
+			<a href='signup'>Sign up</a>
 			<a href='users/login'>Log in</a>
 
 		<?php endif; ?>
