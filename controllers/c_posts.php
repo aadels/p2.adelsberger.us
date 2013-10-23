@@ -32,7 +32,7 @@ class posts_controller extends base_controller{
 
 		#Insert
 		#We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
-		DB::instance(DB_NAME)->insert('posts, $_POST');
+		DB::instance(DB_NAME)->insert('posts', $_POST);
 
 		#Verify posting
 		echo "Your post has been added. <a href='/posts/add'>Add another</a>";
