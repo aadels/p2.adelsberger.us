@@ -7,7 +7,7 @@ class posts_controller extends base_controller{
 
 		#Make suere user is logged in if they want to use anything in this controller.
 
-		if(!this->user){
+		if(!$this->user){
 			die("Members only. <a href='/users/login'>Login</a>");
 		}
 	}
@@ -37,8 +37,7 @@ class posts_controller extends base_controller{
 			echo "Your post has been added. <a href='/posts/add'>Add another</a>";
 
 		}
+	}	
 
-
-	}
+}# end of the class
 	
-}
