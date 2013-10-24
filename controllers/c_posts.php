@@ -95,5 +95,30 @@ class posts_controller extends base_controller{
 
 	}
 
+	 public function index(){
+	 	#Set up the view
+	 	$this->template->content = View::instance('v_posts_index');
+	 	$this->template->title = "Posts";
+
+	 	#Build the query
+	 	$q = "SELECT 
+            posts .* , 
+            users.first_name, 
+            users.last_name
+        	FROM posts
+        	INNER JOIN users 
+            ON posts.user_id = users.user_id";
+
+            #Run the query
+            $posts = DB::instance(DB_NAME)->select_rows($q);
+
+            #Pass the data to the View
+            $this->template->content->posts = $posts;
+
+            #Render the view
+            echo $this->template;
+
+	 }
+
 }# end of the class
 	
