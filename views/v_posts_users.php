@@ -1,7 +1,9 @@
+<h1>Follow Users</h1>
+
 <? foreach ($users as $user): ?>
 
 	<!-- Print user's name -->
-	<?=$user['first_name']?> <?=$user['last_name']?>
+	<h2><?=$user['first_name']?> <?=$user['last_name']?></h2>
 	<br><br>
 
 	<!-- If there is a connection with this user, sho an unfollow link -->
