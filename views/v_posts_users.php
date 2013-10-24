@@ -4,7 +4,7 @@
 
 	<!-- Print user's name -->
 	<h2><?=$user['first_name']?> <?=$user['last_name']?></h2>
-	<br><br>
+	
 
 	<!-- If there is a connection with this user, sho an unfollow link -->
 	<? if(isset($connections[$user['user_id']])): ?>
