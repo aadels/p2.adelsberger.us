@@ -1,8 +1,9 @@
 <?php foreach($posts as $post): ?>
+	<h1>Hi, <?=$user_name?>. Here are the posts from users you are following.</h1>
 
 <article>
 
-	<h1> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h1>
+	<h2> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h2>
 
 	<p><?=$post['content'] ?></p>
 
