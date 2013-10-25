@@ -1,4 +1,4 @@
-<h1>Hi, <?=$first_name?>. Here are the posts from users you are following.</h1>
+<h1>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h1>
 
 <?php foreach($posts as $post): ?>
 
