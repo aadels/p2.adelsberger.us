@@ -1,5 +1,6 @@
+<h1>Hi, <?=$first_name?>. Here are the posts from users you are following.</h1>
+
 <?php foreach($posts as $post): ?>
-	<h1>Hi, <?=$user_name?>. Here are the posts from users you are following.</h1>
 
 <article>
 
