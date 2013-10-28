@@ -27,7 +27,7 @@ class posts_controller extends base_controller{
 		$_POST['user_id'] = $this->user->user_id;
 
 		#Unix timestamp for when post is created and modified
-		$_POST['created'] = Time::now();
+		$_POST['created']  = Time::now();
 		$_POST['modified'] = Time::now();
 
 		#Insert
@@ -42,7 +42,7 @@ class posts_controller extends base_controller{
 
 		#Set up the view
 		$this->template->content = View::instance("v_posts_users");
-		$this->template->title = "Users";
+		$this->template->title   = "Users";
 
 		#Build a query to get all of the users
 		$q = "SELECT * FROM users";
