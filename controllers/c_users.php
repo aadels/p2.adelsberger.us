@@ -134,7 +134,7 @@ class users_controller extends base_controller {
 
         //Set up the View
         $this->template->content = View::instance('v_users_profile');
-        $this->template->title = "Profile of".$this->user->first_name; 
+        $this->template->title = "Profile of ".$this->user->first_name; 
 
         /*Load client files
         $client_files_head = Array(
