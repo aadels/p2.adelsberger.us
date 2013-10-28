@@ -148,10 +148,10 @@ class users_controller extends base_controller {
             '/js/profile.js'
             );
 
-         $this->template->client_files_body= Utils::load_client_files($client_files_body);
+         $this->template->client_files_body= Utils::load_client_files($client_files_body);*/
        
         //Pass the data to the view
-        $this->template->content->user_name = $user_name;*/
+        $this->template->content->user_name = $user_name;
         
         //Display the view
         echo $this->template;
