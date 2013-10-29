@@ -20,6 +20,7 @@ class users_controller extends base_controller {
 
         # Render template
             echo $this->template;
+            echo "The database user is: ".DB_USER;
 
     }
 
