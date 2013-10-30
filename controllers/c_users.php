@@ -122,7 +122,7 @@ class users_controller extends base_controller {
 
     }
 
-    public function profile() {
+    public function profile($user_name = NULL) {
 
         //If user is blank, they are not logged in. Redirect them to the login page
         if (!$this->user){
@@ -137,6 +137,9 @@ class users_controller extends base_controller {
        
         //Pass the data to the view
         $this->template->content->user_name = $user_name;
+
+        // pass errors, if any
+        $this->template->content->error = $error;
         
         //Display the view
         echo $this->template;
