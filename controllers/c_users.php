@@ -46,14 +46,16 @@ class users_controller extends base_controller {
 
     }*/
 
-    public function login($error = NULL) {
+    public function login($error = NULL, $badEmail = NULL, $badPassword = NULL) {
          //Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
 
-        //Pass datat to the view
+        //Pass data to the view
         $this->template->content->error = $error;
-
+        $this->template->content->badEmail = $badEmail;
+        $this->template->content->badPassword = $badPassword;
+        
         //Render template
         echo $this->template;
     }
