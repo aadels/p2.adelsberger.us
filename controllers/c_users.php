@@ -85,10 +85,10 @@ class users_controller extends base_controller {
              //Redirect to wherever you want user to go
             //echo "Login failed";
             Router::redirect("/users/login/error");
-        }
-        elseif(!$_POST['email']){
+    
+        //elseif(!$_POST['email']){
 
-            Router::redirect("/users/login/badEmail");
+            //Router::redirect("/users/login/badEmail");
 
         //if token found, login succeeded!
         } else {
