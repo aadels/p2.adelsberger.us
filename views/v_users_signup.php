@@ -25,6 +25,14 @@
         <br>
     <?php endif; ?>
 
+    <?php if(isset($exists)): ?>
+        <div class='error'>
+            There is already an account associated with this email. <br />
+            <a href="/users/login">Login</a>
+        </div>
+        <br>
+    <?php endif; ?>
+
     <input type='submit' value='Sign up'>
 
 </form>

@@ -35,6 +35,17 @@ class users_controller extends base_controller {
             }
         }       
 
+        //Check to see if the input email already exists in the database (sanitize input)
+        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
+        $exists = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
+
+        //If email already exists
+        if($exists){
+
+             //Redirect to error page
+            Router::redirect("/users/signup/exists");
+        }    
+        
         //Store time data
         $_POST['created']  = Time::now();
         $_POST['modified'] = Time::now();
