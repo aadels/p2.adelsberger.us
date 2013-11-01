@@ -17,7 +17,6 @@
 		<br>
 	<?php endif; ?>
 
-
 	<input type='submit' value='Log in'>
 
 
