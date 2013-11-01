@@ -23,7 +23,7 @@
             Signup Failed. All fields are required.
         </div>
         <br>
-     <?php endif; ?>
+  
 
     <?php if(isset($exists)): ?>
         <div class='error'>
