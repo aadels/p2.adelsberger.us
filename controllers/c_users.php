@@ -55,7 +55,7 @@ class users_controller extends base_controller {
     }
    
 
-    }*/
+
 
     public function login($error = NULL) {
          //Setup view
