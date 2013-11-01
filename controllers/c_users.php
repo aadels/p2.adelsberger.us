@@ -18,6 +18,9 @@ class users_controller extends base_controller {
             $this->template->content = View::instance('v_users_signup');
             $this->template->title   = "Sign Up";
 
+        //Pass data to the view
+        $this->template->content->error = $error;
+
         # Render template
             echo $this->template;
     }
@@ -38,9 +41,17 @@ class users_controller extends base_controller {
         //Insert user into database
         DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
-        //confirm signup
-        //echo 'You\'re signed up.';  
-        Router::redirect('/users/login');      
+        //If no input submitted
+        if(!$_POST){
+
+             //Redirect to error page
+            Router::redirect("/users/signup/error");
+        
+        }else {
+
+        //redirect to login
+        Router::redirect('/users/login');  
+        }    
     }
     /*public function test_db(){
 
