@@ -27,6 +27,17 @@ class users_controller extends base_controller {
 
     public function p_signup() {
 
+        //Check input for blank fields
+        foreach($_POST as $field => $value){
+            if($value == " ") {
+                //If any fields are blank, send error message
+                 Router::redirect('/users/signup/error');  
+
+            }else{
+                //redirect to login
+                Router::redirect('/users/login');  
+            }
+        }       
 
         //Store time data
         $_POST['created']  = Time::now();
@@ -41,18 +52,7 @@ class users_controller extends base_controller {
         //Insert user into database
         DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
-        //Check input for blank fields
-        foreach($_POST as $field => $value){
-            if($value == " ") {
-                //If any fields are blank, send error message
-                 Router::redirect('/users/signup/error');  
-
-            }else{
-                //redirect to login
-                Router::redirect('/users/login');  
-            }
-        }       
-       
+           
     }
    
 
@@ -72,6 +72,7 @@ class users_controller extends base_controller {
     }
 
     public function p_login(){
+        
         //Store time data
         //$_POST['last_login']  = Time::now();
 
