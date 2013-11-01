@@ -50,6 +50,7 @@ class users_controller extends base_controller {
             }else{
                 //redirect to login
                 Router::redirect('/users/login');  
+            }
         }       
        
     }
