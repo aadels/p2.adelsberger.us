@@ -86,7 +86,7 @@ class users_controller extends base_controller {
             //echo "Login failed";
             Router::redirect("/users/login/error");
         
-        elseif(email !=  $_POST['email']){
+        elseif(!$_POST['email']){
 
             Router::redirect("/users/login/badEmail");
         }
