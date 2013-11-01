@@ -22,7 +22,7 @@ class users_controller extends base_controller {
         $this->template->content->error = $error;
 
         # Render template
-            echo $this->template;
+        echo $this->template;
     }
 
     public function p_signup() {
@@ -57,7 +57,7 @@ class users_controller extends base_controller {
 
 
 
-    public function login($error = NULL) {
+    public function login() {
          //Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
