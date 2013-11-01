@@ -23,7 +23,7 @@
 		</div>
 		<br>
 	<?php endif; ?>
-The email you entered does not belong to any account.
+
 	<input type='submit' value='Log in'>
 
 
