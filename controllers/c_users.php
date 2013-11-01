@@ -46,14 +46,14 @@ class users_controller extends base_controller {
 
     }*/
 
-    public function login($error = NULL, $badEmail = NULL, $badPassword = NULL) {
+    public function login($error = NULL) {
          //Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
 
         //Pass data to the view
         $this->template->content->error = $error;
-        $this->template->content->badEmail = $badEmail;
+        
         //$this->template->content->badPassword = $badPassword;
         
         //Render template
@@ -124,7 +124,7 @@ class users_controller extends base_controller {
 
     }
 
-    public function profile() {
+    public function profile($error = NULL) {
 
         //If user is blank, they are not logged in. Redirect them to the login page
         if (!$this->user){
