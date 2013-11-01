@@ -27,8 +27,7 @@
 
     <?php if(isset($exists)): ?>
         <div class='error'>
-            There is already an account associated with this email. <br />
-            <a href="/users/login">Login</a>
+            There is already an account associated with this email. 
         </div>
         <br>
     <?php endif; ?>

@@ -44,7 +44,7 @@ class users_controller extends base_controller {
 
              //Redirect to error page
             Router::redirect("/users/signup/exists");
-        }    
+        }else{   
         
         //Store time data
         $_POST['created']  = Time::now();
@@ -61,7 +61,7 @@ class users_controller extends base_controller {
      
          //redirect to login
          Router::redirect('/users/login');  
-        
+        } 
         
            
     }
