@@ -10,9 +10,10 @@
 	<input type='password' name = 'password'>
 	<br><br>
 
-	<?php if(isset($error)): ?>
-		<div class='error'>
-			Login Failed. Please double check your email and password.
+
+	<?php if(isset($badEmail)): ?>
+		<div class='badEmail'>
+			The email you entered does not belong to any account.
 		</div>
 		<br>
 	<?php endif; ?>

@@ -80,15 +80,16 @@ class users_controller extends base_controller {
          $token = DB::instance(DB_NAME)->select_field($q);
 
          //If no matching token found in DB, login failed
-        if(!$token){
+        //if(!$token){
 
              //Redirect to wherever you want user to go
             //echo "Login failed";
-            Router::redirect("/users/login/error");
-    
-        //elseif(!$_POST['email']){
+            //Router::redirect("/users/login/error");
+        //}
 
-            //Router::redirect("/users/login/badEmail");
+        if(!$_POST['email']){
+
+           Router::redirect("/users/login/badEmail");
 
         //if token found, login succeeded!
         } else {
