@@ -32,10 +32,6 @@ class users_controller extends base_controller {
             if($value == " ") {
                 //If any fields are blank, send error message
                  Router::redirect('/users/signup/error');  
-
-            }else{
-                //redirect to login
-                Router::redirect('/users/login');  
             }
         }       
 
@@ -50,7 +46,11 @@ class users_controller extends base_controller {
         $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
         
         //Insert user into database
-        DB::instance(DB_NAME)->insert_row('users', $_POST); 
+        DB::instance(DB_NAME)->insert_row('users', $_POST);
+     
+         //redirect to login
+         Router::redirect('/users/login');  
+        
         
            
     }
