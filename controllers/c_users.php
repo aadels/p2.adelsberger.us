@@ -12,7 +12,7 @@ class users_controller extends base_controller {
         echo "This is the index page";
     }
 
-    public function signup($error = NULL) {
+    public function signup($error = NULL, $exists = NULL) {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
@@ -20,7 +20,7 @@ class users_controller extends base_controller {
 
         //Pass data to the view
         $this->template->content->error = $error;
-
+        $this->template->content->exists= $exists;
         # Render template
         echo $this->template;
     }
@@ -35,15 +35,14 @@ class users_controller extends base_controller {
             }
         }       
 
-        //Check to see if the input email already exists in the database (sanitize input)
-        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
+        //Check to see if the input email already exists in the database 
         $exists = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
 
         //If email already exists
         if($exists){
 
              //Redirect to error page
-            Router::redirect("/users/signup/exists");
+            Router::redirect('/users/signup/exists');
         }else{   
         
         //Store time data
