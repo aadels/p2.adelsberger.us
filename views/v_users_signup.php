@@ -18,8 +18,6 @@
     <input type='password' name='password'>
     <br><br>
 
-    test
-
     <?php if(isset($error)): ?>
         <div class='error'>
             Signup Failed. All fields are required.
