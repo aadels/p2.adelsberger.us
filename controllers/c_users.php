@@ -128,7 +128,7 @@ class users_controller extends base_controller {
 
     }
 
-    public function profile($user_name = NULL) {
+    public function profile() {
 
         //If user is blank, they are not logged in. Redirect them to the login page
         if (!$this->user){
