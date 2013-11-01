@@ -12,7 +12,7 @@ class users_controller extends base_controller {
         echo "This is the index page";
     }
 
-    public function signup() {
+    public function signup($error = NULL) {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
@@ -57,7 +57,7 @@ class users_controller extends base_controller {
    
 
 
-    public function login() {
+    public function login($error = NULL) {
          //Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title = "Login";
