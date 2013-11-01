@@ -41,20 +41,19 @@ class users_controller extends base_controller {
         //Insert user into database
         DB::instance(DB_NAME)->insert_row('users', $_POST); 
         
-        //If no input submitted
-        if(!$_POST){
+        //Check input for blank fields
+        foreach($_POST as $field => $value){
+            if($value == " ") {
+                //If any fields are blank, send error message
+                 Router::redirect('/users/signup/error');  
 
-             //Redirect to error page
-            Router::redirect("/users/signup/error");
-        
-        }else {
-
-        //redirect to login
-        Router::redirect('/users/login');  
-        }    
+            }else{
+                //redirect to login
+                Router::redirect('/users/login');  
+        }       
+       
     }
    
-
 
 
     public function login() {
