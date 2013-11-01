@@ -54,7 +54,7 @@ class users_controller extends base_controller {
         //Pass data to the view
         $this->template->content->error = $error;
         $this->template->content->badEmail = $badEmail;
-        $this->template->content->badPassword = $badPassword;
+        //$this->template->content->badPassword = $badPassword;
         
         //Render template
         echo $this->template;
@@ -80,12 +80,16 @@ class users_controller extends base_controller {
          $token = DB::instance(DB_NAME)->select_field($q);
 
          //If no matching token found in DB, login failed
-         if(!$token){
+        if(!$token){
 
              //Redirect to wherever you want user to go
             //echo "Login failed";
             Router::redirect("/users/login/error");
+        
+        elseif(email !=  $_POST['email']){
 
+            Router::redirect("/users/login/badEmail");
+        }
         //if token found, login succeeded!
         } else {
             /* 

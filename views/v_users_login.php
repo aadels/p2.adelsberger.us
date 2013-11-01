@@ -17,6 +17,13 @@
 		<br>
 	<?php endif; ?>
 
+	<?php if(isset($badEmail)): ?>
+		<div class='badEmail'>
+			The email you entered does not belong to any account.
+		</div>
+		<br>
+	<?php endif; ?>
+The email you entered does not belong to any account.
 	<input type='submit' value='Log in'>
 
 
