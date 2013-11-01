@@ -11,9 +11,9 @@
 	<br><br>
 
 
-	<?php if(isset($badEmail)): ?>
-		<div class='badEmail'>
-			The email you entered does not belong to any account.
+	<?php if(isset($error)): ?>
+		<div class='error'>
+			Login Failed. Please double check your email and password.
 		</div>
 		<br>
 	<?php endif; ?>
