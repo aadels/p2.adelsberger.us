@@ -29,7 +29,7 @@ class users_controller extends base_controller {
 
         //Check input for blank fields
         foreach($_POST as $field => $value){
-            if($value == " ") {
+            if(empty($value)) {
                 //If any fields are blank, send error message
                  Router::redirect('/users/signup/error');  
             }
