@@ -36,7 +36,7 @@ class users_controller extends base_controller {
         }       
 
         //Check to see if the input email already exists in the database 
-        $exists = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
+        $error = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
 
         //If email already exists
         if($error){
