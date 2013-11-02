@@ -31,7 +31,7 @@ class users_controller extends base_controller {
         foreach($_POST as $field => $value){
             if(empty($value)) {
                 //If any fields are blank, send error message
-                 Router::redirect('/users/signup/error');  
+                 Router::redirect('/users/signup/blank-fields');  
             }
         }       
 
@@ -39,10 +39,10 @@ class users_controller extends base_controller {
         $exists = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
 
         //If email already exists
-        if($exists){
+        if($error){
 
              //Redirect to error page
-            Router::redirect('/users/signup/exists');
+            Router::redirect('/users/signup/email-exists');
         }else{   
         
         //Store time data
