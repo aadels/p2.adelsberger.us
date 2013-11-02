@@ -9,7 +9,7 @@ class users_controller extends base_controller {
     public function index() {
         #Setup View
         $this->template->title   = "Welcome to UFP!";
-        echo "This is the index page";
+     
     }
 
     public function signup($error = NULL, $exists=NULL) {
@@ -21,7 +21,7 @@ class users_controller extends base_controller {
         //Pass data to the view
         $this->template->content->error = $error;
         $this->template->content->exists= $exists;
-        # Render template
+        //Render template
         echo $this->template;
     }
 
