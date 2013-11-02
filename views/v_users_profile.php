@@ -1,6 +1,6 @@
 
   <h1 class="page-header">Hi, <?=$user->first_name?>!</h1>
-      	   <h4>Your Profile</h4>
+      	
         <?php if ($user->image  == 'placeholder.png'): ?>
             <p>Would you like to add a profile picture?</p>
         <?php endif; ?>
