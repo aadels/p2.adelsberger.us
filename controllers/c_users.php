@@ -57,6 +57,19 @@ class users_controller extends base_controller {
         
         //Insert user into database
         DB::instance(DB_NAME)->insert_row('users', $_POST);
+
+         // send an email a welcome message to the new user
+            // build a multi-dimension array of recipients of this email
+            $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
+            $from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
+            $subject = "Welcome to UFP";               
+            $body = View::instance('welcome_email');
+                
+            // Send email
+            Email::send($to, $from, $subject, $body, true, '');
+
+            // signup confirm
+                        Router::redirect("/users/profile");
      
          //redirect to login
          Router::redirect('/users/login');  

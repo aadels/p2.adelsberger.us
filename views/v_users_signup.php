@@ -18,14 +18,11 @@
     <input type='password' name='password'>
     <br><br>
 
-    <?=error?>
 
     <?php if(isset($error) && $error == 'blank-fields'): ?>
         <div class='error'>
             Signup Failed. All fields are required.
         </div>
-        
-
     <?php endif; ?>
 
     <?php if(isset($error) && $error == 'email-exists'): ?>
