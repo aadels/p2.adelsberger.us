@@ -12,7 +12,7 @@ class users_controller extends base_controller {
      
     }
 
-    public function signup($error = NULL, $exists=NULL) {
+    public function signup($error = NULL) {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
@@ -20,7 +20,7 @@ class users_controller extends base_controller {
 
         //Pass data to the view
         $this->template->content->error = $error;
-        $this->template->content->exists= $exists;
+        
         //Render template
         echo $this->template;
     }
