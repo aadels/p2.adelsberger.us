@@ -180,7 +180,37 @@ class users_controller extends base_controller {
         echo $this->template;
 
     }
+    public function profile_image() {
+        // if user selects a profile image, upload it
+        if ($_FILES['avatar']['error'] == 0)
+        {
+            //upload an image
+            $image = Upload::upload($_FILES, "/uploads/avatars/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $this->user->user_id);
 
+            if($image == 'Invalid file type.') {
+                // return an error
+                Router::redirect("/users/profile/error"); 
+            }
+            else {
+                // process the upload
+                $data = Array("image" => $image);
+                DB::instance(DB_NAME)->update("users", $data, "WHERE user_id = ".$this->user->user_id);
+
+                // resize the image
+                $imgObj = new Image($_SERVER["DOCUMENT_ROOT"] . '/uploads/avatars/' . $image);
+                $imgObj->resize(100,100, "crop");
+                $imgObj->save_image($_SERVER["DOCUMENT_ROOT"] . '/uploads/avatars/' . $image); 
+            }
+        }
+        else
+        {
+            // return an error
+            Router::redirect("/users/profile/error");  
+        }
+
+        // Redirect back to the profile page
+        router::redirect('/users/profile'); 
+    }  
 
 
 } # end of the class
