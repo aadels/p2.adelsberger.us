@@ -8,7 +8,7 @@
                 <img src="/uploads/avatars/<?= $user->image ?>" alt="<?=$user->first_name . ' ' . $user->last_name ?>">                    
                     <div class="form-group">
                             <label for="exampleInputFile">Your Profile Image</label><br /><br />
-                            <button type="submit" class="btn btn-custom">Upload Your Profile Image</button>
+                            <button type="submit" class="btn btn-custom">Update Your Profile Image</button><br />
                             <input type="file" id="image" name="image">
                     </div>
                     
