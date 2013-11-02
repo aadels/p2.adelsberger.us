@@ -54,6 +54,8 @@ class users_controller extends base_controller {
 
         //Create encrypted string via their email address and a random string
         $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+
+        //Insert placeholder profile image
         
         //Insert user into database
         DB::instance(DB_NAME)->insert_row('users', $_POST);
@@ -139,7 +141,7 @@ class users_controller extends base_controller {
     }
 
     public function logout() {
-        //Generate and save a key for teh next login
+        //Generate and save a key for the next login
         $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
 
         /*Create the data array we'll use with the update method
