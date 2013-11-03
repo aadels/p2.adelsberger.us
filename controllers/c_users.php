@@ -45,23 +45,22 @@ class users_controller extends base_controller {
             Router::redirect('/users/signup/email-exists');
         }else{   
         
-            //Store time data
-            $_POST['created']  = Time::now();
-            $_POST['modified'] = Time::now();
+        //Store time data
+        $_POST['created']  = Time::now();
+        $_POST['modified'] = Time::now();
         
-            //Encrypt PW
-            $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+        //Encrypt PW
+        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
-            //Create encrypted string via their email address and a random string
-            $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+        //Create encrypted string via their email address and a random string
+        $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+
+        //Insert placeholder profile image
         
-            //Insert user into database
-            DB::instance(DB_NAME)->insert_row('users', $_POST);
+        //Insert user into database
+        DB::instance(DB_NAME)->insert_row('users', $_POST);
 
-            //Insert data for user to follow self
-            DB::instance(DB_NAME)->insert('users_users', $data);
-
-            // send an email a welcome message to the new user
+         // send an email a welcome message to the new user
             // build a multi-dimension array of recipients of this email
             $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
             $from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
