@@ -31,6 +31,29 @@
 	<?php if(isset($content)) echo $content; ?>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+
+	        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>YaketyYak<br>
+                        	+1 features:<br>
+                        </p>
+                        <ul>
+                            <li>Emailing a welcome letter to a new user.</li>
+                            <li>Uploading profile image</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="right pull-right">Ann Adelsberger<br>
+                        	CSCI E-15 Project 2<br>
+                        	Fall 2013<br>
+                            <a href="mailto:adelsbergerann@gmail.com">adelsbergerann@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- footer -->
 	<!--javascript at end of body-->
 
 </body>
