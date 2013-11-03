@@ -68,9 +68,6 @@ class users_controller extends base_controller {
             //Insert data for user to follow self
             DB::instance(DB_NAME)->insert('users_users', $data);
 
-            //Log registered User in
-            setcookie("token", $_POST['token'], strtotime('+1 year'), '/');
-
             // send an email a welcome message to the new user
             // build a multi-dimension array of recipients of this email
             $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
