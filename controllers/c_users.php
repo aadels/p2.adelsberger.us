@@ -15,8 +15,8 @@ class users_controller extends base_controller {
     public function signup($error = NULL) {
 
         # Setup view
-            $this->template->content = View::instance('v_users_signup');
-            $this->template->title   = "Sign Up";
+        $this->template->content = View::instance('v_users_signup');
+        $this->template->title   = "Sign Up";
 
         //Pass data to the view
         $this->template->content->error = $error;
@@ -54,8 +54,6 @@ class users_controller extends base_controller {
 
         //Create encrypted string via their email address and a random string
         $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-
-        //Insert placeholder profile image
         
         //Insert user into database
         $user_id = DB::instance(DB_NAME)->insert_row('users', $_POST);
@@ -66,25 +64,29 @@ class users_controller extends base_controller {
             "user_id" => $user_id,
             "user_id_followed" => $user_id
             );
+    
 
         // Do the insert
         DB::instance(DB_NAME)->insert('users_users', $data);
 
-         // send an email a welcome message to the new user
-            // build a multi-dimension array of recipients of this email
-            $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
-            $from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
-            $subject = "Welcome to UFP";               
-            $body = View::instance('welcome_email');
-                
-            // Send email
-            Email::send($to, $from, $subject, $body, true, '');
+        // log user in using the token we generated
+        setcookie("token", $_POST['token'], strtotime('+1 year'), '/');
 
-            // signup confirm
-                        Router::redirect("/users/profile");
+        // send an email a welcome message to the new user
+        // build a multi-dimension array of recipients of this email
+        $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
+        $from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
+        $subject = "Welcome to UFP";               
+        $body = View::instance('welcome_email');
+                
+        // Send email
+        Email::send($to, $from, $subject, $body, true, '');
+
+        // signup confirm
+        Router::redirect("/users/profile");
      
          //redirect to login
-         Router::redirect('/users/login');  
+         //Router::redirect('/users/login');  
         } 
         
            
@@ -122,7 +124,7 @@ class users_controller extends base_controller {
         WHERE email = '".$_POST['email']."' 
         AND password = '".$_POST['password']."'";
 
-         $token = DB::instance(DB_NAME)->select_field($q);
+        $token = DB::instance(DB_NAME)->select_field($q);
 
          //If no matching token found in DB, login failed
         if(!$token){
