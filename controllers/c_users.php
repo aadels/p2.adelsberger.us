@@ -58,7 +58,17 @@ class users_controller extends base_controller {
         //Insert placeholder profile image
         
         //Insert user into database
-        DB::instance(DB_NAME)->insert_row('users', $_POST);
+        $user_id = DB::instance(DB_NAME)->insert_row('users', $_POST);
+
+        // all users follow their own posts by default
+        $data = Array(
+            "created" => Time::now(),
+            "user_id" => $user_id,
+            "user_id_followed" => $user_id
+            );
+
+        // Do the insert
+        DB::instance(DB_NAME)->insert('users_users', $data);
 
          // send an email a welcome message to the new user
             // build a multi-dimension array of recipients of this email
