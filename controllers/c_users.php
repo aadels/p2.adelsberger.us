@@ -58,13 +58,6 @@ class users_controller extends base_controller {
             //Insert user into database
             DB::instance(DB_NAME)->insert_row('users', $_POST);
 
-            //Users Automatically follow their own posts
-            $data = Array(
-                "created" => Time::now(),
-                "user_id" => $user_id,
-                "user_id_followed" => $user_id
-                );
-
             //Insert data for user to follow self
             DB::instance(DB_NAME)->insert('users_users', $data);
 
