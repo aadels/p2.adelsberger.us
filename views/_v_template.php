@@ -49,7 +49,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-6">
-                        <p class="right pull-right">Ann Adelsberger<br>
+                        <p class="pull-right">Ann Adelsberger<br>
                         	CSCI E-15 Project 2<br>
                         	Fall 2013<br>
                             <a href="mailto:adelsbergerann@gmail.com">adelsbergerann@gmail.com</a>
