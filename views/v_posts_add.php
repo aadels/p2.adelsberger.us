@@ -4,7 +4,7 @@
     <br>
     <textarea name='content' id='content'></textarea>
 
-     <?php if(isset($error)?>
+     <?php if(isset($error)): ?>
         <div class='error'>
             Post Failed. Please Yak away!
         </div>
