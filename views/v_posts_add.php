@@ -8,4 +8,10 @@
     <input type='submit' value='New post'>
 
 </form> 
+<?php if(isset($error)): ?>
+    <div>
+        <h4>Post failed.</h4> 
+        <p>Please Yak away!</p>
+    </div>
+<?php endif; ?>
 
