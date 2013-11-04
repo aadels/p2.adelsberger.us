@@ -30,6 +30,12 @@ class posts_controller extends base_controller{
 		$_POST['created']  = Time::now();
 		$_POST['modified'] = Time::now();
 
+		if (trim($_POST['content']) == '')
+            Router::redirect("/posts/index/error");
+
+        // Escape HTML chars (XSS attacks)
+        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
+
 		//Insert
 		//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
 		DB::instance(DB_NAME)->insert('posts', $_POST);
