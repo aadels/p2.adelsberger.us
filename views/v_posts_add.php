@@ -4,14 +4,16 @@
     <br>
     <textarea name='content' id='content'></textarea>
 
+     <?php if(isset($error)?>
+        <div class='error'>
+            Post Failed. Please Yak away!
+        </div>
+        
+
+    <?php endif; ?>
+
     <br><br>
     <input type='submit' value='New post'>
 
 </form> 
-<?php if(isset($error)): ?>
-    <div>
-        <h4>Post failed.</h4> 
-        <p>Please Yak away!</p>
-    </div>
-<?php endif; ?>
 
