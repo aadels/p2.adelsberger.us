@@ -26,10 +26,12 @@ class posts_controller extends base_controller{
 		
 	public function p_add(){
 
-		if (empty($_POST)){
-            
-            Router::redirect("/posts/add/error");
-        }    
+	   foreach($_POST as $field => $value){
+            if(empty($value)) {
+            	//If any post is, send error message.
+            	Router::redirect("/posts/add/error");
+        	}    
+        }
 
         else{   
         	//Associate this post with this user
