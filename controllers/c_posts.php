@@ -26,19 +26,18 @@ class posts_controller extends base_controller{
 		
 	public function p_add(){
 
-		//Associate this post with this user
-		$_POST['user_id'] = $this->user->user_id;
-
-		//Unix timestamp for when post is created and modified
-		$_POST['created']  = Time::now();
-		$_POST['modified'] = Time::now();
-
-		if (trim(empty($_POST))){
+		if (empty($_POST)){
             
             Router::redirect("/posts/add/error");
         }    
 
         else{   
+        	//Associate this post with this user
+			$_POST['user_id'] = $this->user->user_id;
+
+			//Unix timestamp for when post is created and modified
+			$_POST['created']  = Time::now();
+			$_POST['modified'] = Time::now();
 
 	        // Escape HTML chars (XSS attacks)
 	        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
