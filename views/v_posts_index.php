@@ -4,18 +4,6 @@
 </div>
 
 
-<form method='POST' action='/posts/p_add'>
-
-    <label for='content'>New Post:</label>
-    <br>
-    <textarea name='content' id='content'></textarea>
-
-    <br><br>
-    <input type='submit' value='New post'>
-
-</form> 
-
-
 <h1>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h1>
 
 <?php foreach($posts as $post): ?>

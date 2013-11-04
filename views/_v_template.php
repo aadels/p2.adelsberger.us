@@ -23,7 +23,8 @@
 
 			<!-- Menu for users who are logged in-->
 			<?php if($user): ?>
-		        <a href='/posts'>View &amp; Add Posts</a>                      
+		        <a href='/posts'>View Feed</a>  
+		        <a href='/posts/add'>Post</a>                        
 		        <a href='/posts/users'>Follow Others</a>                     
 				<a href='/users/logout'>Logout</a>
 				<a href='/users/profile'>Profile</a>
