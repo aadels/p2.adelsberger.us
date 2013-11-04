@@ -6,7 +6,7 @@
 
      <?php if(isset($error)): ?>
         <div class='error'>
-            Post Failed. Please Yak away!
+            Post failed. Please add a post!
         </div>
         
 

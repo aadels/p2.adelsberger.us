@@ -33,16 +33,10 @@ class posts_controller extends base_controller{
 		$_POST['created']  = Time::now();
 		$_POST['modified'] = Time::now();
 
-		if (trim($_POST['content']) == ''){
+		if (trim(empty($_POST))){
             
-            Router::redirect("/posts/index/error");
+            Router::redirect("/posts/add/error");
         }    
-
-        elseif($error){
-
-             //Redirect to error page
-            Router::redirect("/posts/index/error");
-        }
 
         else{   
 
