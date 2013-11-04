@@ -101,7 +101,7 @@ class posts_controller extends base_controller{
 
 	}
 
-	 public function index(){
+	 public function index($error = NULL){
 	 	//Set up the view
 	 	$this->template->content = View::instance('v_posts_index');
 	 	$this->template->title = "Posts";
@@ -127,6 +127,9 @@ class posts_controller extends base_controller{
 
             //Pass the data to the View
             $this->template->content->posts = $posts;
+
+            //Pass errors, if any
+        	$this->template->content->error = $error;
 
             //Render the view
             echo $this->template;
