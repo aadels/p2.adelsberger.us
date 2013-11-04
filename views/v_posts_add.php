@@ -9,7 +9,6 @@
             Post failed. Please add a post!
         </div>
         
-
     <?php endif; ?>
 
     <br><br>

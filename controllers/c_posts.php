@@ -31,27 +31,27 @@ class posts_controller extends base_controller{
             	//If any post is, send error message.
             	Router::redirect("/posts/add/error");
         	}    
-        }
+        
 
-        else{   
-        	//Associate this post with this user
-			$_POST['user_id'] = $this->user->user_id;
+	        else{   
+	        	//Associate this post with this user
+				$_POST['user_id'] = $this->user->user_id;
 
-			//Unix timestamp for when post is created and modified
-			$_POST['created']  = Time::now();
-			$_POST['modified'] = Time::now();
+				//Unix timestamp for when post is created and modified
+				$_POST['created']  = Time::now();
+				$_POST['modified'] = Time::now();
 
-	        // Escape HTML chars (XSS attacks)
-	        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
+		        // Escape HTML chars (XSS attacks)
+		        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
 
-			//Insert
-			//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
-			DB::instance(DB_NAME)->insert('posts', $_POST);
+				//Insert
+				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
+				DB::instance(DB_NAME)->insert('posts', $_POST);
 
 
-			//Redirect to posts page
-			Router::redirect("/posts/");
-		}
+				//Redirect to posts page
+				Router::redirect("/posts/");
+			}
 	}
 
 	public function users() {
