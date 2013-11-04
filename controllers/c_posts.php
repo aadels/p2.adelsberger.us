@@ -17,7 +17,7 @@ class posts_controller extends base_controller{
 		$this ->template->content = View::instance('v_posts_add');
 		$this->template->title = "New Post";
 
-		//Pass data to the view
+		//Pass errors, if any
         $this->template->content->error = $error;
 
 		//Render Template
