@@ -4,7 +4,13 @@
 		<title><?php if(isset($title)) echo $title . " - "; ?>YaketyYak</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <link href="css/bootstrap.min.css" rel="stylesheet">
+	    <script src="js/respond.js"></script>	
+	    
+	    <!-- Bootstrapp -->
+	    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- fonts -->
+
 						
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -18,7 +24,7 @@
 			<!-- Menu for users who are logged in-->
 			<?php if($user): ?>
 		        <a href='/posts'>View &amp; Add Posts</a>                      
-		        <a href='/posts/users'>Follow Others</a                      
+		        <a href='/posts/users'>Follow Others</a>                     
 				<a href='/users/logout'>Logout</a>
 				<a href='/users/profile'>Profile</a>
 
@@ -56,8 +62,8 @@
 	            </div>
 	        </div> <!-- footer -->
 		<!--javascript at end of body-->
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="js/respond.js"></script>	
 		
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 
