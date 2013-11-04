@@ -11,11 +11,14 @@ class posts_controller extends base_controller{
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
 	}
-	public function add(){
+	public function add($error = NULL){
 
 		//Set up view
 		$this ->template->content = View::instance('v_posts_add');
 		$this->template->title = "New Post";
+
+		//Pass data to the view
+        $this->template->content->error = $error;
 
 		//Render Template
 		echo $this->template;
@@ -39,6 +42,7 @@ class posts_controller extends base_controller{
 		//Insert
 		//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
 		DB::instance(DB_NAME)->insert('posts', $_POST);
+
 
 		//Redirect to posts page
 		Router::redirect("/posts/");
@@ -101,7 +105,7 @@ class posts_controller extends base_controller{
 
 	}
 
-	 public function index($error = NULL){
+	 public function index(){
 	 	//Set up the view
 	 	$this->template->content = View::instance('v_posts_index');
 	 	$this->template->title = "Posts";
