@@ -19,7 +19,7 @@
 			<p><?=$post['content'] ?></p>
 
 			<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-				<small><?=Time::display($post['created'])?></small>
+				<x-small><?=Time::display($post['created'])?></x-small>
 			</time>
 
 </article>
