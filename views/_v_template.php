@@ -68,31 +68,32 @@
 			</div>	
 		</div><!--close container-->
 
+		<div class="container">
+			<?php if(isset($content)) echo $content; ?>
+		</div>
 
-		<?php if(isset($content)) echo $content; ?>
-
-		        <div id="footer">
-	            <div class="container">
-	                <div class="row">
-	                    <div class="col-xs-6">
-	                        <p>YaketyYak<br>
-	                        	+1 features:<br>
-	                        </p>
-	                        <ul>
-	                            <li>Emailing a welcome letter to new users.</li>
-	                            <li>Uploading/changing profile picture</li>
-	                        </ul>
-	                    </div>
-	                    <div class="col-xs-6">
-	                        <p class="right pull-right">Ann Adelsberger<br>
-	                        	CSCI E-15 Project 2<br>
-	                        	Fall 2013<br>
-	                            <a href="mailto:adelsbergerann@gmail.com">adelsbergerann@gmail.com</a>
-	                        </p>
-	                    </div>
-	                </div>
-	            </div>
-	        </div> <!-- footer -->
+	    <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>YaketyYak<br>
+                        	+1 features:<br>
+                        </p>
+                        <ul>
+                            <li>Emailing a welcome letter to new users.</li>
+                            <li>Uploading/changing profile picture</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="right pull-right">Ann Adelsberger<br>
+                        	CSCI E-15 Project 2<br>
+                        	Fall 2013<br>
+                            <a href="mailto:adelsbergerann@gmail.com">adelsbergerann@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- footer -->
 		<!--javascript at end of body-->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
