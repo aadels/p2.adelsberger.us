@@ -19,10 +19,7 @@
             <label for="first_name">Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
         </div>  
-        <div class="form-group">
-            <label for="first_name">Retype Password</label>
-            <input type="password" class="form-control" id="retype" name="retype" placeholder="Retype password">
-        </div>       
+         
 
 
     <?php if(isset($error) && $error == 'blank-fields'): ?>
