@@ -6,10 +6,7 @@
         background-color: #0d485c;
 }
 
-.container{
-        background-color: #d2d2dc
 
-}
 
 .navbar-inverse .navbar-nav>li>a{
         color: #d2d2dc;
@@ -27,4 +24,10 @@ body {
 .row .navbar-header .navbar-logo{
 
 
+}
+
+.well{
+        background-color: #d2d2dc
+        border-color: #4f4d4f;
+        margin: 40px 40px;
 }
