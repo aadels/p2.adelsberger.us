@@ -10,7 +10,7 @@
         background-color: #0d485c;
 }
 
-#footer .row p {
+#footer .row p li{
         color: #fff;
         padding-top: 1%;
 }
