@@ -12,14 +12,15 @@
 
 #footer .row p {
         color: #fff;
+        padding-top: 1%;
 }
 
 
-.row .navbar-nav<li>a{
+.row #collapse .nav<li>a{
         color: #fff;
 }
 
-.row .navbar-nav<li>a:hover{
+.row .collapse .nav<li>a:hover{
         color: #d2d2dc;
 }
 
