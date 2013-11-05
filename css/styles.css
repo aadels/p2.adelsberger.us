@@ -23,11 +23,11 @@
         color: #e4c325;
 }
 
-.row #collapse .nav .navbar-nav<li>a{
+.navbar-collapse .navbar-nav<li>a{
         color: #fff;
 }
 
-.row #collapse .nav .navbar-nav<li>a:hover{
+.navbar-collapse  .navbar-nav<li>a:hover{
         color: #d2d2dc;
 }
 
