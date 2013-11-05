@@ -17,22 +17,22 @@
     height:120px;
 }
 
-#footer {
+#footer-wrapper{
         height: 120px;
         background-color: #0d485c;
 }
 
 
-#footer .row p {
+#footer-wrapper .row p {
         color: #fff;
         padding-top: 1%;
 }
 
-#footer .row li{
+#footer-wrapper .row li{
         color: #fff;    
 }
 
-#footer .row a{
+#footer-wrapper .row a{
         color: #e4c325;
 }
 
