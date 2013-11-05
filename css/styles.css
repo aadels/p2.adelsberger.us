@@ -1,0 +1,22 @@
+.menu{
+        background-color: #5298be;
+}
+.well{
+        background-color: #d2d2dc
+        border-color: #4f4d4f;
+        margin: 40px 40px;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+        color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+        color: #fff;
+}
+
+body {
+        background-color: #FFF;
+        border-color: #4f4d4f;
+        margin: 0 20px 50px;
+}
