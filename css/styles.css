@@ -6,10 +6,11 @@
  ************************************************************************/
 
 /* Wrapper for body to expand to footer */
-#wrap {
-    height: auto;
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
     height: 100%;
-    /*indent footer*/
+    /* Negative indent footer by its height */
     margin: 0 auto -120px;
 }
 

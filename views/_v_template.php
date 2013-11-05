@@ -19,7 +19,7 @@
 	</head>
 
 	<body>	
-		<div id="wrap">
+		<div id="wrapper">
 			<!-- row 1: navigation -->
 				<div id='menu'>
 						<!-- navigation-->
