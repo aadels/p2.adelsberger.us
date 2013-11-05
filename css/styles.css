@@ -7,9 +7,14 @@
 
 /* Wrapper for body to expand to footer */
 #wrapper {
-       
+        min-height:100%;
+        height:auto !important;
         height:100%;
         margin:0 auto -120px auto; 
+}
+
+#fillspace {
+    height:120px;
 }
 
 #footer {

@@ -77,14 +77,15 @@
 					<?php if(isset($content)) echo $content; ?>
 				</div><!-- well -->
 			</div><!-- container-->
+			<div id="fillspace"></div>
 		</div><!--close wrapper-->	
 
-	    <div id="footer">
+	    <div id="footer_wrapper">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">
                         <p>YaketyYak<br>
-                        	+1 features:<br>
+                           +1 features:<br>
                         </p>
                         <ul>
                             <li>Emailing a welcome letter to new users.</li>
