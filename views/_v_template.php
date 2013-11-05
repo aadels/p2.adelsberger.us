@@ -33,7 +33,7 @@
 		                        <span class="icon-bar"></span>
 		                        <span class="icon-bar"></span>
 		                    </button>
-		                    <img src="../img/Yak2.png" a href="/" class="navbar-logo"> YaketyYak/a>
+		                    <a href="/" class="navbar-logo"> YaketyYak/a>
 		            	</div>
 		            	<div class="collapse navbar-collapse" id="collapse">
 							<ul class="nav navbar-nav">

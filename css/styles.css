@@ -1,6 +1,11 @@
-.menu{
+#menu{
         background-color: #5298be;
 }
+
+#footer{
+        background-color: #5298be;
+}
+
 .well{
         background-color: #d2d2dc
         border-color: #4f4d4f;
@@ -19,4 +24,8 @@ body {
         background-color: #FFF;
         border-color: #4f4d4f;
         margin: 0 20px 50px;
+}
+.row .navbar-header .navbar-logo{
+
+
 }
