@@ -1,4 +1,19 @@
 
+/************************************************************************ 
+ * CSCI E-15 Project 2
+ * Ann Adelsberger 
+ * adelsbergerann@gmail.com
+ ************************************************************************/
+
+/* Wrapper for body to expande to fotter */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    height: 100%;
+    /*indent footer*/
+    margin: 0 auto -120px;
+}
+
 #menu{
         background-color: #0d485c;
 }
@@ -48,3 +63,4 @@ body {
         border-color: #4f4d4f;
         margin: 20px 20px;
 }
+
