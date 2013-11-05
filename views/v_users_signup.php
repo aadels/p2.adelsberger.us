@@ -1,22 +1,23 @@
-<h2>Sign Up</h2>
+<h2>Create a YaketyYak account</h2>
 
-<form method='POST' action='/users/p_signup'>
+<form role="form" method='POST' action='/users/p_signup'>
 
-    First Name<br>
-    <input type='text' name='first_name'>
-    <br><br>
-
-    Last Name<br>
-    <input type='text' name='last_name'>
-    <br><br>
-
-    Email<br>
-    <input type='text' name='email'>
-    <br><br>
-
-    Password<br>
-    <input type='password' name='password'>
-    <br><br>
+    <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" <?php if(isset($_POST['first_name'])) echo "value = '". $_POST['first_name'] ."'"?>>
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" <?php if(isset($_POST['last_name'])) echo "value = '". $_POST['last_name'] ."'"?>>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" <?php if(isset($_POST['email'])) echo "value = '". $_POST['email'] ."'"?>>
+    </div>
+    <div class="form-group">
+        <label for="first_name">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div> 
 
 
     <?php if(isset($error) && $error == 'blank-fields'): ?>
@@ -34,6 +35,6 @@
 
     <?php endif; ?>
 
-    <input type='submit' value='Sign up'>
+    <button type="button" class="btn btn-default btn-lg btn-block">Sign up</button>
 
 </form>
