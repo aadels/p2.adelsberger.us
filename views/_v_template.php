@@ -25,9 +25,9 @@
 				<div class="container">
 					<!-- navigation-->
 					<div class="row">	
-						<nav class="navbar" role="navigation">
+						<nav class="navbar" role="banner">
 							<div class="navbar-header">
-			                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+			                    <button class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 			                        <span class="sr-only">Toggle navigation</span>
 			                        <span class="icon-bar"></span>
 			                        <span class="icon-bar"></span>
@@ -35,7 +35,7 @@
 			                    </button>
 			                 	<a href='/'><img src="/img/logo.png" id="logo" alt="logo"</a>
 			            	</div>
-			            	<div class="collapse navbar-collapse pull-right" id="collapse">
+			            	<div class="collapse navbar-collapse pull-right" role="navigation"id="collapse">
 								<ul class="nav navbar-nav">
 									<!-- Menu for users who are logged in-->
 									<?php if($user): ?>
