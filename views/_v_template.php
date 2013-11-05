@@ -80,7 +80,7 @@
 			<div id="fillspace"></div>
 		</div><!--close wrapper-->	
 
-	    <div id="footer_wrapper">
+	    <div id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">
