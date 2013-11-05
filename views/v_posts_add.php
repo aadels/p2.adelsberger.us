@@ -2,7 +2,7 @@
     <div class="form-group">
         <label for='content'>New Post:</label>
         <br>
-        <textarea class="form-control" rows="3" ='content' id='content'></textarea>
+        <textarea class="form-control" rows="4" ='content' id='content'></textarea>
 
          <?php if(isset($error)): ?>
             <div class='error'>
@@ -10,8 +10,8 @@
             </div>            
         <?php endif; ?>
     </div>
-    <br><br>
-    <input type='submit' value='New post'>
+    <br>
+    <input type='submit' value='Post'>
 </form> 
 
 
