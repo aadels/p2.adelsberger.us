@@ -1,5 +1,5 @@
 
-  <h3class="page-header">Hi, <?=$user->first_name?>!</h3>
+  <h3 class="page-header">Hi, <?=$user->first_name?>!</h3>
   <p>Member since: <?= date('F j, Y', $user->created) ?>.</p>
       	
         <?php if ($user->image  == 'placeholder.png'): ?>
