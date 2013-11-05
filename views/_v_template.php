@@ -23,9 +23,9 @@
 		<!-- row 1: navigation -->
 			<div id='menu'>
 
-				<!-- Menu for users who are logged in-->
+				<!-- navigation-->
 				<div class="row">	
-					<nav class="collapse navbar-collapse" role="navigation">
+					<nav class="navbar" role="navigation">
 						<div class="navbar-header">
 		                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 		                        <span class="sr-only">Toggle navigation</span>
@@ -35,8 +35,9 @@
 		                    </button>
 		                 	<a href='/'><img src="/img/logo.png" id="logo" alt="logo"</a>
 		            	</div>
-		            	<div class="collapse navbar-collapse pull-right" id="collapse">
+		            	<div class="navbar pull-right" id="collapse">
 							<ul class="nav navbar-nav">
+								<!-- Menu for users who are logged in-->
 								<?php if($user): ?>
 							        <li>
 							        	<a href='/posts'>View Feed</a> 
