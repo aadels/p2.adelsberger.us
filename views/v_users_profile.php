@@ -6,7 +6,7 @@
             <p>Would you like to update your profile picture?</p>
         <?php endif; ?>
         <form role="form" method='POST' enctype="multipart/form-data" action='/users/profile_image/'>
-                <img src="/uploads/avatars/<?= $user->image ?>" alt="<?=$user->first_name . ' ' . $user->last_name ?>">                    
+                <img class="img-rounded" src="/uploads/avatars/<?= $user->image ?>" alt="<?=$user->first_name . ' ' . $user->last_name ?>">                    
                     <div class="form-group">
                             
                             <input type="file" id="image" name="image">
