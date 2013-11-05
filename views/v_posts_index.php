@@ -13,14 +13,15 @@
         <div class="col-xs-2 col-lg-1">
         	<img src="/uploads/avatars/<?=$post['image']?>">
         </div>
-        	<div class="well">
-				<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
-				<p><?=$post['content'] ?></p>
-				<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-					<small><?=Time::display($post['created'])?></small>
-				</time>
+        	<div class="post-well">
+	        	<div class="well">
+					<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
+					<p><?=$post['content'] ?></p>
+					<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
+						<small><?=Time::display($post['created'])?></small>
+					</time>
+				</div>
 			</div>
-
 </article>
 
 <?php endforeach; ?>
