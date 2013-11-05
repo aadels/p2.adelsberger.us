@@ -22,10 +22,10 @@
 		
 		<!-- row 1: navigation -->
 			<div id='menu'>
-				<div class="container">
 					<!-- navigation-->
-					<div class="row">	
-						<nav class="navbar" role="banner">
+				<div class="row">	
+					<nav class="navbar" role="banner">
+						<div class="container">
 							<div class="navbar-header">
 			                    <button class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 			                        <span class="sr-only">Toggle navigation</span>
@@ -66,9 +66,10 @@
 									<?php endif; ?>
 								</ul>
 							</div>
-						</nav>
-					</div><!--close row-->	
-				</div><!--close container-->	
+						</div><!--close container-->	
+					</nav>
+				</div><!--close row-->	
+				
 			</div><!--close menu-->	
 			
 
