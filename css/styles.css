@@ -19,11 +19,9 @@
 
 #footer {
         height: 120px;
-}
-
-#footer{
         background-color: #0d485c;
 }
+
 
 #footer .row p {
         color: #fff;
@@ -63,6 +61,7 @@ body {
 .well{
         background-color: #d2d2dc
         border-color: #4f4d4f;
+        margin: 40px 40px;
         
 }
 .post-well{
