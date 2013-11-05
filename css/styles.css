@@ -5,6 +5,12 @@
  * adelsbergerann@gmail.com
  ************************************************************************/
 
+html,
+body {
+    height: 100%;
+
+}
+
 /* Wrapper for body to expand to footer */
 #wrapper {
         min-height:100%;
