@@ -25,7 +25,7 @@
 				<div class="container">
 					<!-- navigation-->
 					<div class="row">	
-						<nav class="navbar" role="navigation">
+						<nav class="navbar navbar-inverse navbar-static-top" role="banner">
 							<div class="navbar-header">
 			                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 			                        <span class="sr-only">Toggle navigation</span>
