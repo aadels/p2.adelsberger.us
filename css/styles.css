@@ -10,14 +10,17 @@
         background-color: #0d485c;
 }
 
-
-
-.row .navbar-nav>li>a{
-        color: #d2d2dc;
+#footer .row {
+        p color: #fff;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover{
+
+.row .navbar-nav<li>a{
         color: #fff;
+}
+
+.row .navbar-nav<li>a:hover{
+        color: #d2d2dc;
 }
 
 body {
