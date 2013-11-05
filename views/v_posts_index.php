@@ -13,15 +13,13 @@
         <div class="col-xs-2 col-lg-1">
         	<img src="/uploads/avatars/<?=$post['image']?>">
         </div>
-
-			<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
-			<div class="row well well-lg">
+        	<div class="row well well-med">
+				<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
 				<p><?=$post['content'] ?></p>
+				<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
+					<small><?=Time::display($post['created'])?></small>
+				</time>
 			</div>
-
-			<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-				<small><?=Time::display($post['created'])?></small>
-			</time>
 
 </article>
 
