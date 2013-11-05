@@ -21,63 +21,63 @@
 	<body>	
 		<div id="wrapper">
 			<!-- row 1: navigation -->
-				<div id='menu'>
-						<!-- navigation-->
-					<div class="row">	
-						<nav class="navbar" role="navigation">
-							<div class="container">
-								<div class="navbar-header">
-				                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				                        <span class="sr-only">Toggle navigation</span>
-				                        <span class="icon-bar"></span>
-				                        <span class="icon-bar"></span>
-				                        <span class="icon-bar"></span>
-				                    </button>
-				                 	<a href='/'><img src="/img/logo.png" id="logo" alt="logo"></a>
-				            	</div>
-				            	<div class="collapse navbar-collapse pull-right" role="navigation" id="collapse">
-									<ul class="nav navbar-nav">
-										<!-- Menu for users who are logged in-->
-										<?php if($user): ?>
-									        <li>
-									        	<a href='/posts'>View Feed</a> 
-									        </li>
-									        <li> 
-									        	<a href='/posts/add'>Post</a> 
-									        </li>
-									        <li>                       
-									        	<a href='/posts/users'>Follow Others</a> 
-									        </li>
-									        <li>                    
-												<a href='/users/logout'>Logout</a>
-											</li>
-											<li>
-												<a href='/users/profile'>Profile</a>
-											</li>
+			<div id='menu'>
+					<!-- navigation-->
+				<div class="row">	
+					<nav class="navbar" role="navigation">
+						<div class="container">
+							<div class="navbar-header">
+			                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			                        <span class="sr-only">Toggle navigation</span>
+			                        <span class="icon-bar"></span>
+			                        <span class="icon-bar"></span>
+			                        <span class="icon-bar"></span>
+			                    </button>
+			                 	<a href='/'><img src="/img/logo.png" id="logo" alt="logo"></a>
+			            	</div>
+			            	<div class="collapse navbar-collapse pull-right" role="navigation" id="collapse">
+								<ul class="nav navbar-nav">
+									<!-- Menu for users who are logged in-->
+									<?php if($user): ?>
+								        <li>
+								        	<a href='/posts'>View Feed</a> 
+								        </li>
+								        <li> 
+								        	<a href='/posts/add'>Post</a> 
+								        </li>
+								        <li>                       
+								        	<a href='/posts/users'>Follow Others</a> 
+								        </li>
+								        <li>                    
+											<a href='/users/logout'>Logout</a>
+										</li>
+										<li>
+											<a href='/users/profile'>Profile</a>
+										</li>
 
-										<!-- Menu for users who are not logged in-->
-										<?php else: ?>
-											<li>
-												<a href='/users/signup'>Sign up</a>
-											</li>
-											<li>
-												<a href='/users/login'>Log in</a>
-											</li>
-										<?php endif; ?>
-									</ul>
-								</div>
-							</div><!--close container-->	
-						</nav>
-					</div><!--close row-->	
-					
-				</div><!--close menu-->	
+									<!-- Menu for users who are not logged in-->
+									<?php else: ?>
+										<li>
+											<a href='/users/signup'>Sign up</a>
+										</li>
+										<li>
+											<a href='/users/login'>Log in</a>
+										</li>
+									<?php endif; ?>
+								</ul>
+							</div>
+						</div><!--close container-->	
+					</nav>
+				</div><!--close row-->	
+				
+			</div><!--close menu-->	
 
 			<div class="container">
 				<div class="row well well-lg">
 					<?php if(isset($content)) echo $content; ?>
 				</div><!-- well -->
 			</div><!-- container-->
-		</div><!--close wrap-->	
+		</div><!--close wrapper-->	
 
 	    <div id="footer">
             <div class="container">
