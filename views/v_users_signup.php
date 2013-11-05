@@ -2,23 +2,27 @@
 
 <form role="form" method='POST' action='/users/p_signup'>
 
-    <div class="form-group">
+     <form role="form" method="POST" action="/users/signup">
+        <div class="form-group">
             <label for="first_name">First Name</label>
-            <input type="text" class="form-control" id="first_name" name="first_name"<?php if(isset($_POST['first_name'])) echo "value = '". $_POST['first_name'] ."'"?>>
-    </div>
-    
-    <div class="form-group">
-        <label for="last_name">Last Name</label>
-        <input type="text" class="form-control" id="last_name" name="last_name"<?php if(isset($_POST['last_name'])) echo "value = '". $_POST['last_name'] ."'"?>>
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email"<?php if(isset($_POST['email'])) echo "value = '". $_POST['email'] ."'"?>>
-    </div>
-    <div class="form-group">
-        <label for="first_name">Password</label>
-        <input type="password" class="form-control" id="password" name="password">
-    </div> 
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" <?php if(isset($_POST['first_name'])) echo "value = '". $_POST['first_name'] ."'"?>>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name" <?php if(isset($_POST['last_name'])) echo "value = '". $_POST['last_name'] ."'"?>>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" <?php if(isset($_POST['email'])) echo "value = '". $_POST['email'] ."'"?>>
+        </div>
+        <div class="form-group">
+            <label for="first_name">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+        </div>  
+        <div class="form-group">
+            <label for="first_name">Retype Password</label>
+            <input type="password" class="form-control" id="retype" name="retype" placeholder="Retype password">
+        </div>       
 
 
     <?php if(isset($error) && $error == 'blank-fields'): ?>
