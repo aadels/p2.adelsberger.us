@@ -33,7 +33,7 @@
 		                        <span class="icon-bar"></span>
 		                        <span class="icon-bar"></span>
 		                    </button>
-		                    <a href="/" class="navbar-logo"> YaketyYak/a>
+		                    <a href='/'><img src="/images/logo.png" id="logo" alt="logo"></a>YaketyYak</a>
 		            	</div>
 		            	<div class="collapse navbar-collapse" id="collapse">
 							<ul class="nav navbar-nav">
@@ -71,9 +71,7 @@
 			
 
 		<div class="container">
-			<div class="row well well-lg">
 				<?php if(isset($content)) echo $content; ?>
-			</div><!-- well -->
 		</div><!-- container-->
 
 	    <div id="footer">

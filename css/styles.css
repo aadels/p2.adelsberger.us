@@ -6,10 +6,9 @@
         background-color: #5298be;
 }
 
-.well{
+.container{
         background-color: #d2d2dc
-        border-color: #4f4d4f;
-        margin: 40px 40px;
+
 }
 
 .navbar-inverse .navbar-nav>li>a{
