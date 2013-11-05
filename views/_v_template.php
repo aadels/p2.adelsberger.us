@@ -71,7 +71,9 @@
 			
 
 		<div class="container">
+			<div class="row well well-lg">
 				<?php if(isset($content)) echo $content; ?>
+			</div><!-- well -->
 		</div><!-- container-->
 
 	    <div id="footer">
