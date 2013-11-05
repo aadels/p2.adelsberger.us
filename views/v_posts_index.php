@@ -11,7 +11,7 @@
 <article>
 	<div class="row">
         <div class="col-xs-2 col-lg-1">
-        	<img src="/uploads/avatars/<?=$post['image']?>">
+        	<img lass="img-rounded" src="/uploads/avatars/<?= $post->image] ?>">
         </div>
         	<div class="post-well">
 	        	<div class="well">
