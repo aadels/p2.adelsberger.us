@@ -11,7 +11,7 @@
 <article>
 	<div class="row">
         <div class="col-xs-2 col-lg-1">
-        	<img src="/uploads/avatars/<?=$post['image']?>">
+        	<img src="/uploads/avatars"<?=$user['image']?>">
         </div>
 
 			<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
