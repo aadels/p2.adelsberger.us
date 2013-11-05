@@ -13,9 +13,6 @@
         margin:0 auto -120px auto; 
 }
 
-#fillspace {
-    height:120px;
-}
 
 #footer {
         height: 120px;
@@ -25,7 +22,7 @@
 
 #footer .row p {
         color: #fff;
-        
+        padding-top: 2%;
 }
 
 #footer .row li{
