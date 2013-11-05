@@ -13,6 +13,9 @@
         margin:0 auto -120px auto; 
 }
 
+#fillspace {
+    height:120px;
+}
 
 #footer {
         height: 120px;
