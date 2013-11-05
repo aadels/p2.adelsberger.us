@@ -1,5 +1,6 @@
 
   <h1 class="page-header">Hi, <?=$user->first_name?>!</h1>
+  <p>Member since: <?= date('F j, Y', $user->created) ?>.</p>
       	
         <?php if ($user->image  == 'placeholder.png'): ?>
             <p>Would you like to update your profile picture?</p>
