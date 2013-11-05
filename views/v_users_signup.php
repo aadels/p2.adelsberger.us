@@ -35,6 +35,6 @@
 
     <?php endif; ?>
 
-    <button type="button" class="btn-custom btn-block">Sign up</button>
+    <button type="button" class="btn btn-custom btn-lg btn-block">Sign up</button>
 
 </form>
