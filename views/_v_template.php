@@ -18,23 +18,54 @@
 	</head>
 
 	<body>	
+		<div class="container">
+		<!-- row 1: navigation -->
 		<div id='menu'>
 			<a href='/'>Home</a>
 
 			<!-- Menu for users who are logged in-->
-			<?php if($user): ?>
-		        <a href='/posts'>View Feed</a>  
-		        <a href='/posts/add'>Post</a>                        
-		        <a href='/posts/users'>Follow Others</a>                     
-				<a href='/users/logout'>Logout</a>
-				<a href='/users/profile'>Profile</a>
+			<div class="row">
+				<nav class="collapse navbar-collapse pull-right" role="navigation">
+					<div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+	                        <span class="sr-only">Toggle navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+	            	</div>
+	            	<div class="collapse navbar-collapse" id="collapse">
+						<ul class="nav navbar-nav">
+							<?php if($user): ?>
+						        <li>
+						        	<a href='/posts'>View Feed</a> 
+						        </li>
+						        <li> 
+						        	<a href='/posts/add'>Post</a> 
+						        </li>
+						        <li>                       
+						        	<a href='/posts/users'>Follow Others</a> 
+						        </li>
+						        <li>                    
+									<a href='/users/logout'>Logout</a>
+								</li>
+								<li>
+									<a href='/users/profile'>Profile</a>
+								</li>
 
-			<!-- Menu for users who are not logged in-->
-			<?php else: ?>
-				<a href='/users/signup'>Sign up</a>
-				<a href='/users/login'>Log in</a>
-
-			<?php endif; ?>
+							<!-- Menu for users who are not logged in-->
+							<?php else: ?>
+								<li>
+									<a href='/users/signup'>Sign up</a>
+								</li>
+								<li>
+									<a href='/users/login'>Log in</a>
+								</li>
+							<?php endif; ?>
+						</ul>
+					</div>
+				</nav>
+			</div>	
 		</div><!--close container-->
 
 
