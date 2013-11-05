@@ -2,7 +2,7 @@
     <div class="form-group">
         <label for='content'>New Post:</label>
         <br>
-        <textarea "form-control" rows="3" ='content' id='content'></textarea>
+        <textarea class="form-control" rows="3" ='content' id='content'></textarea>
 
          <?php if(isset($error)): ?>
             <div class='error'>
