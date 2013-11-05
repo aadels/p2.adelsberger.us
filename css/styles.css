@@ -5,17 +5,17 @@
  * adelsbergerann@gmail.com
  ************************************************************************/
 
-/* Wrapper for body to expande to fotter */
+/* Wrapper for body to expand to footer */
 #wrap {
-    min-height: 100%;
     height: auto;
     height: 100%;
     /*indent footer*/
     margin: 0 auto -120px;
 }
 
-#menu{
-        background-color: #0d485c;
+#push,
+#footer {
+    height: 120px;
 }
 
 #footer{
@@ -33,6 +33,10 @@
 
 #footer .row a{
         color: #e4c325;
+}
+
+#menu{
+        background-color: #0d485c;
 }
 
 .navbar-collapse .navbar-nav li a{
