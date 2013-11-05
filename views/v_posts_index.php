@@ -15,11 +15,12 @@
         </div>
 
 			<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
-
-			<p><?=$post['content'] ?></p>
+			<div class="row well well-lg">
+				<p><?=$post['content'] ?></p>
+			</div>
 
 			<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-				<x-small><?=Time::display($post['created'])?></x-small>
+				<small><?=Time::display($post['created'])?></small>
 			</time>
 
 </article>
