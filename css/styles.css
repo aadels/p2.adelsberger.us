@@ -67,7 +67,7 @@ body {
 .well{
         background-color: #d2d2dc;
         border-color: #4f4d4f;
-        margin-top: -15px; /* cut off top portion of wells */
+        margin-top: 20px; /* cut off top portion of wells */
        
         
 }
