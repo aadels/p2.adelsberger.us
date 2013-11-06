@@ -1,6 +1,6 @@
 
 <div >
-         <img class="img-rounded" src="/uploads/avatars/<?= $user->image ?>">
+         <img class="img-rounded-post" src="/uploads/avatars/<?= $user->image ?>">
 </div>
 
 
