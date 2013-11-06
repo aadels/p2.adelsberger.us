@@ -2,7 +2,7 @@
 
     <label for='content'>New Post:</label>
     <br>
-    <textarea name='content' id='content'></textarea>
+    <textarea name='content' class ='span6' id='content'></textarea>
 
      <?php if(isset($error)): ?>
         <div class='error'>
