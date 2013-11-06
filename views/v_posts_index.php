@@ -26,6 +26,7 @@
 				</time>
 			</div>
 		</article>
+	</div>
 
 
 <?php endforeach; ?>
