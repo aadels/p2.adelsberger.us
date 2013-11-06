@@ -8,8 +8,6 @@
         </article>
 </div>
 
-<br><br>
-
 
 
 <?php if (count($posts) == 0) :?>
@@ -23,7 +21,7 @@
         <aside class="col-xs-2 col-lg-1">
         	<img class="img-rounded img-post" src="/uploads/avatars/<?=$post['image']?>">
         </aside>
-    	<article class="col-xs-9 col-lg-offset-1 col-lg-10 ">
+    	<article class="col-xs-9 col-sm-offset-1 col-lg-10 col-lg-offset-1 ">
         	<div class="well post">
 				<h4> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h4>
 				<p><?=$post['content'] ?></p>
