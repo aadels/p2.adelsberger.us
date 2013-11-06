@@ -25,7 +25,7 @@
 					<small><?=Time::display($post['created'])?></small>
 				</time>
 			</div>
-		</aricle>
+		</article>
 
 
 <?php endforeach; ?>
