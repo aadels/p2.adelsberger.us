@@ -10,7 +10,7 @@
                     <div class="form-group">
                             
                             <input type="file" id="image" name="image">
-                            <br><br>
+                            <br>
                             <button type="submit" class="btn btn-custom">Update</button>
 
                     </div>
