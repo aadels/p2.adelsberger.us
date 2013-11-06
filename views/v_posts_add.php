@@ -1,20 +1,18 @@
 <form method='POST' action='/posts/p_add'>
-    <div class="form-group">
-        <label for='content'>New Post:</label>
-        <br>
-        <textarea "form-control" rows="3" ='content' id='content'></textarea>
-    </div>
-</form> 
-        
-        <?php if(isset($error)): ?>
-            <div class='error'>
-                Post failed. Please add a post!
-            </div>
-            
-        <?php endif; ?>
-<form>       
-        <br><br>
-        <input type='submit' value='New post'>
-</form> 
 
+    <label for='content'>New Post:</label>
+    <br>
+    <textarea name='content' id='content'></textarea>
+
+     <?php if(isset($error)): ?>
+        <div class='error'>
+            Post failed. Please add a post!
+        </div>
+        
+    <?php endif; ?>
+
+    <br><br>
+    <input type='submit' value='New post'>
+
+</form> 
 
