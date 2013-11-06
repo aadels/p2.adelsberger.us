@@ -1,10 +1,14 @@
 
-<div >
-         <img class="img-rounded img-post" src="/uploads/avatars/<?= $user->image ?>">
+<div class="row">
+		<aside class="col-xs-2 col-lg-1">
+        	<img class="img-rounded img-post" src="/uploads/avatars/<?= $user->image ?>">
+        </aside>
+        <article class="col-xs-9 col-lg-offset-1 col-lg-10 ">
+        	<h2>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h2>
+        </article>
 </div>
 
 
-<h2>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h2>
 
 <?php if (count($posts) == 0) :?>
         <p>You are not following anyone yet. Follow  <a href="/posts/users">other users here!</a></p>
