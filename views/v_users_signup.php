@@ -1,22 +1,23 @@
 <h2>Sign Up</h2>
 
-<form method='POST' action='/users/p_signup'>
+ <form role="form" method="POST" action="/users/signup">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" <?php if(isset($_POST['first_name'])) echo "value = '". $_POST['first_name'] ."'"?>>
+        </div>
 
-    First Name<br>
-    <input type='text' name='first_name'>
-    <br><br>
-
-    Last Name<br>
-    <input type='text' name='last_name'>
-    <br><br>
-
-    Email<br>
-    <input type='text' name='email'>
-    <br><br>
-
-    Password<br>
-    <input type='password' name='password'>
-    <br><br>
+    <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" <?php if(isset($_POST['last_name'])) echo "value = '". $_POST['last_name'] ."'"?>>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" <?php if(isset($_POST['email'])) echo "value = '". $_POST['email'] ."'"?>>
+        </div>
+        <div class="form-group">
+            <label for="first_name">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>  
 
 
     <?php if(isset($error) && $error == 'blank-fields'): ?>
