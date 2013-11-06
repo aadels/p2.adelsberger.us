@@ -7,7 +7,7 @@
 <h2>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h2>
 
 <?php if (count($posts) == 0) :?>
-        <p>Follow  <a href="/posts/users">other users here!</a></p>
+        <p>You are not following anyone yet. Follow  <a href="/posts/users">other users here!</a></p>
 <?php endif; ?>
 
 <?php foreach($posts as $post): ?>
