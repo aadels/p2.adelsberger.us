@@ -113,7 +113,7 @@ class users_controller extends base_controller {
 
     public function p_login(){
         
-        //Store time data
+        //Store time data - interfering with login, so commented out for now
         //$_POST['last_login']  = Time::now();
 
         //Sanitize user input data
