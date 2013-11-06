@@ -6,7 +6,6 @@ class posts_controller extends base_controller{
 		parent::__construct();
 
 		//Make sure user is logged in if they want to use anything in this controller.
-
 		if(!$this->user){
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
@@ -28,7 +27,7 @@ class posts_controller extends base_controller{
 
 	   foreach($_POST as $field => $value){
             if(empty($value)) {
-            	//If any post is, send error message.
+            	//If empty post submitted, send error message.
             	Router::redirect("/posts/add/error");
         	}    
         
