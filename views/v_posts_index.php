@@ -12,7 +12,7 @@
 
 <?php foreach($posts as $post): ?>
 
-<article>
+
 	<div class="row">
         <aside class="col-xs-2 col-lg-1">
         	<img class="img-rounded img-post" src="/uploads/avatars/<?=$post['image']?>">
@@ -26,6 +26,6 @@
 				</time>
 			</div>
 		</aricle>
-</article>
+
 
 <?php endforeach; ?>
