@@ -14,10 +14,10 @@
 
 <article>
 	<div class="row">
-        <div class="col-xs-2 col-lg-1">
+        <div class="col-xs-3 col-lg-2">
         	<img class="img-rounded" src="/uploads/avatars/<?=$post['image']?>">
         </div>
-        	<div class="col-xs-10 col-lg-11">
+        	<div class="col-xs-9 col-lg-10">
 	        	<div class="well post">
 					<h3> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h3>
 					<p><?=$post['content'] ?></p>
