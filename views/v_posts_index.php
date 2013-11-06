@@ -1,9 +1,9 @@
 
 <div class="row">
-		<aside class="col-s-1 col-lg-1">
+		<aside class="col-sm-2 col-lg-1">
         	<img class="img-rounded img-post" src="/uploads/avatars/<?= $user->image ?>">
         </aside>
-        <article class=" col-lg-10 col-lg-offset-1 col-lg-11 col-lg-offset-1 ">
+        <article class=" col-sm-9 col-sm-offset-1 col-lg-10 col-lg-offset-1 ">
         	<h3>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h3>
         </article>
 </div>
