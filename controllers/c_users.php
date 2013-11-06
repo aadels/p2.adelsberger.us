@@ -43,10 +43,6 @@ class users_controller extends base_controller {
 
              //Redirect to error page
             Router::redirect('/users/signup/email-exists');
-
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { 
-            Router::redirect("/users/signup/bademail"); 
-
         }else{   
         
         //Store time data

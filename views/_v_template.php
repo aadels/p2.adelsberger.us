@@ -20,9 +20,9 @@
 
 	<body>	
 		<div id="wrapper">
-			<!--  navigation -->
+			<!-- row 1: navigation -->
 			<div id='menu'>
-					<!-- navigation bar-->
+					<!-- navigation-->
 				<div class="row">	
 					<nav class="navbar" role="navigation">
 						<div class="container">
@@ -35,7 +35,6 @@
 			                    </button>
 			                 	<a href='/'><img src="/img/logo.png" id="logo" alt="logo"></a>
 			            	</div>
-			            	<!-- Collapse not currently working correctly-->
 			            	<div class="collapse navbar-collapse pull-right" role="navigation" id="collapse">
 								<ul class="nav navbar-nav">
 									<!-- Menu for users who are logged in-->
