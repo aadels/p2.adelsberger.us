@@ -1,15 +1,15 @@
+
+
 <?php
 class users_controller extends base_controller {
 
     public function __construct() {
-        parent::__construct();
-      
+        parent::__construct();  
     } 
 
     public function index() {
         #Setup View
-        $this->template->title   = "Welcome to UFP!";
-     
+        $this->template->title   = "Welcome to UFP!"; 
     }
 
     public function signup($error = NULL) {
@@ -50,48 +50,45 @@ class users_controller extends base_controller {
 
         }else{ 
         
-        //Store time data
-        $_POST['created']  = Time::now();
-        $_POST['modified'] = Time::now();
+            //Store time data
+            $_POST['created']  = Time::now();
+            $_POST['modified'] = Time::now();
+            
+            //Encrypt PW
+            $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+
+            //Create encrypted string via their email address and a random string
+            $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+            
+            //Insert user into database
+            $user_id = DB::instance(DB_NAME)->insert_row('users', $_POST);
+
+            // all users follow their own posts by default
+            $data = Array(
+                "created" => Time::now(),
+                "user_id" => $user_id,
+                "user_id_followed" => $user_id
+                );
         
-        //Encrypt PW
-        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
-        //Create encrypted string via their email address and a random string
-        $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-        
-        //Insert user into database
-        $user_id = DB::instance(DB_NAME)->insert_row('users', $_POST);
+            // Do the insert
+            DB::instance(DB_NAME)->insert('users_users', $data);
 
-        // all users follow their own posts by default
-        $data = Array(
-            "created" => Time::now(),
-            "user_id" => $user_id,
-            "user_id_followed" => $user_id
-            );
-    
+            // log user in using the token we generated
+            setcookie("token", $_POST['token'], strtotime('+1 year'), '/');
 
-        // Do the insert
-        DB::instance(DB_NAME)->insert('users_users', $data);
+            // send an email a welcome message to the new user
+            // build a multi-dimension array of recipients of this email
+            $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
+            $from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
+            $subject = "Welcome to UFP";               
+            $body = View::instance('welcome_email');
+                    
+            // Send email
+            Email::send($to, $from, $subject, $body, true, '');
 
-        // log user in using the token we generated
-        setcookie("token", $_POST['token'], strtotime('+1 year'), '/');
-
-        // send an email a welcome message to the new user
-        // build a multi-dimension array of recipients of this email
-        $to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
-        $from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
-        $subject = "Welcome to UFP";               
-        $body = View::instance('welcome_email');
-                
-        // Send email
-        Email::send($to, $from, $subject, $body, true, '');
-
-        // signup confirm
-        Router::redirect("/users/profile");
-     
-         //redirect to login
-         //Router::redirect('/users/login');  
+            // signup confirm, redirect to profile
+            Router::redirect("/users/profile");
         } 
         
            
@@ -114,7 +111,7 @@ class users_controller extends base_controller {
     public function p_login(){
         
         //Store time data
-        //$_POST['last_login']  = Time::now();
+        $_POST['last_login']  = Time::now();
 
         //Sanitize user input data
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
