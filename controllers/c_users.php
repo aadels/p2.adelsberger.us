@@ -42,8 +42,9 @@ class users_controller extends base_controller {
         if($error){
              //Redirect to error page
             Router::redirect('/users/signup/email-exists');
+        }
         
-        elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
             //Redirect to error page 
             Router::redirect("/users/signup/bad-email"); 
 
