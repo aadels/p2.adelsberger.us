@@ -40,10 +40,14 @@ class users_controller extends base_controller {
 
         //If email already exists
         if($error){
-
              //Redirect to error page
             Router::redirect('/users/signup/email-exists');
-        }else{   
+        
+        elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+            //Redirect to error page 
+            Router::redirect("/users/signup/bad-email"); 
+
+        }else{ 
         
         //Store time data
         $_POST['created']  = Time::now();

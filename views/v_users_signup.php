@@ -30,9 +30,15 @@
             There is already an account associated with this email. 
             <a href="/users/login">Login</a>
         </div>
-        
-
     <?php endif; ?>
+
+    <?php if(isset($error) && $error == 'bad-email'): ?>
+        <div class='error'>
+            This is not a valid email.
+        </div>
+    <?php endif; ?>
+        
+    
 
     <input type='submit' value='Sign up'>
 
