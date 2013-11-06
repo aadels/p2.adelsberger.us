@@ -68,13 +68,7 @@ body {
         background-color: #d2d2dc;
         border-color: #4f4d4f;
         margin-top: 20px; /* cut off top portion of wells */
-        min-height:80%;
-        height:auto !important;
-        height:80%;
-        margin:0 auto -120px auto; 
-
-  
-       
+        
         
 }
 .post{
