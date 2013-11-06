@@ -8,6 +8,8 @@
         </article>
 </div>
 
+<br><br>
+
 
 
 <?php if (count($posts) == 0) :?>
