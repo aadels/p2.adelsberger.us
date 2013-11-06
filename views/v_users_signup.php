@@ -25,13 +25,18 @@
         </div>
     <?php endif; ?>
 
+    <?php if(isset($error) && $error == 'bad-email'): ?>
+        <div class='error'>
+            THis is not a valis email address.
+            <a href="/users/login">Login</a>
+        </div>  
+    <?php endif; ?>
+
     <?php if(isset($error) && $error == 'email-exists'): ?>
         <div class='error'>
             There is already an account associated with this email. 
             <a href="/users/login">Login</a>
-        </div>
-        
-
+        </div>  
     <?php endif; ?>
 
     <input type='submit' value='Sign up'>

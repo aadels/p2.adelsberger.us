@@ -28,7 +28,8 @@ body {
         background-color: #0d485c;
 }
 
-
+/* Wrapper for body to expand to footer */
+#wrapper {
 #footer .row p {
         color: #fff;
         padding-top: 2%;
