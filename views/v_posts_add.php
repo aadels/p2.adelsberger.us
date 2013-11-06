@@ -3,7 +3,8 @@
         <label for='content'>New Post:</label>
         <br>
         <textarea "form-control" rows="3" ='content' id='content'></textarea>
-        </div>
+    </div>
+</form> 
         
         <?php if(isset($error)): ?>
             <div class='error'>
@@ -11,7 +12,7 @@
             </div>
             
         <?php endif; ?>
-        
+<form>       
         <br><br>
         <input type='submit' value='New post'>
 </form> 
