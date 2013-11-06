@@ -1,6 +1,6 @@
 
 <div >
-         <img class="img-rounded-post" src="/uploads/avatars/<?= $user->image ?>">
+         <img class="img-rounded img-post" src="/uploads/avatars/<?= $user->image ?>">
 </div>
 
 
@@ -15,7 +15,7 @@
 <article>
 	<div class="row">
         <div class="col-xs-3 col-lg-2">
-        	<img class="img-rounded-post" src="/uploads/avatars/<?=$post['image']?>">
+        	<img class="img-rounded img-post" src="/uploads/avatars/<?=$post['image']?>">
         </div>
         	<div class="col-xs-9 col-lg-10">
 	        	<div class="well post">
