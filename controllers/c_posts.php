@@ -10,14 +10,20 @@ class posts_controller extends base_controller{
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
 	}
-	public function add($error = NULL){
+	public function add(){
 
 		//Set up view
 		$this ->template->content = View::instance('v_posts_add');
-		$this->template->title = "New Post";
+		$this->template->title = "Add a new post";
 
-		//Pass errors, if any
-        $this->template->content->error = $error;
+		//Load JS files
+        $client_files_body = Array(
+        	"/js/posts_add.js"'. '
+        	"/js/posts_add.js"
+        );
+
+        $this->template->client_files_body = Utils::load_client_files($client_files_body);
+
 
 		//Render Template
 		echo $this->template;
@@ -25,23 +31,11 @@ class posts_controller extends base_controller{
 		
 	public function p_add(){
 
-	   foreach($_POST as $field => $value){
-            if(empty($value)) {
-            	//If empty post submitted, send error message.
-            	Router::redirect("/posts/add/error");
-        	}    
-        
 
-	        else{   
-	        	//Associate this post with this user
-				$_POST['user_id'] = $this->user->user_id;
-
-				//Unix timestamp for when post is created and modified
-				$_POST['created']  = Time::now();
+				//Set up the data
+				$_POST['user_id']  = $this->user->user_id;
+				$_POST['created'] = Time::now();
 				$_POST['modified'] = Time::now();
-
-		        // Escape HTML chars (XSS attacks)
-		        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
 
 				//Insert
 				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
@@ -49,10 +43,9 @@ class posts_controller extends base_controller{
 
 
 				//Redirect to posts page
-				Router::redirect("/posts/");
+				echo "your post was added";
 			}
-		}
-	}
+	
 
 	public function users() {
 
