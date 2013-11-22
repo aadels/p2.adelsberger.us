@@ -6,7 +6,7 @@ var options = {
         $('#results').html("Adding...");
     },
     success: function(response) {   
-        $('#results').html("Your post was added.");
+        $('#results').html(response);
     } 
 }; 
 
