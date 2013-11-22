@@ -15,7 +15,7 @@ class control_panel_controller extends base_controller{
             echo $this->template;
     }
 
-    public function p_control_panel() {
+    public function refresh() {
 
         $data = Array();
 

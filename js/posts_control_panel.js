@@ -2,7 +2,7 @@ $('#refresh-button').click(function() {
 
     $.ajax({
         type: 'POST',
-        url: '/posts/p_control_panel',
+        url: '/control_panel/refresh',
         success: function(response) { 
 
             // For debugging purposes
