@@ -10,40 +10,48 @@ class posts_controller extends base_controller{
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
 	}
-	public function add() {
+	public function add($error = NULL){
 
-	    # Setup view
-	    $this->template->content = View::instance('v_posts_add');
-	    $this->template->title   = "Add a new post";
+		//Set up view
+		$this ->template->content = View::instance('v_posts_add');
+		$this->template->title = "New Post";
 
-	    # Load JS files
-	    $client_files_body = Array(
-	        "/js/jquery.form.js",
-	        "/js/posts_add.js"
-	    );
+		//Pass errors, if any
+        $this->template->content->error = $error;
 
-	    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
-
-	    # Render template
-	    echo $this->template;   
+		//Render Template
+		echo $this->template;
 	}	
 		
-	public function p_add() {
+	public function p_add(){
 
-	    // Set up the data
-	    $_POST['user_id']  = $this->user->user_id;
-	    $_POST['created']  = Time::now();
-	    $_POST['modified'] = Time::now();
+	   foreach($_POST as $field => $value){
+            if(empty($value)) {
+            	//If empty post submitted, send error message.
+            	Router::redirect("/posts/add/error");
+        	}    
+        
 
-	    // Insert the post
-	    DB::instance(DB_NAME)->insert('posts',$_POST);
+	        else{   
+	        	//Associate this post with this user
+				$_POST['user_id'] = $this->user->user_id;
 
-	    // Send a simple message back
-	    //echo "New post was added on ".Time::display(Time::now());
-	    $view = new View('v_posts_p_add');
+				//Unix timestamp for when post is created and modified
+				$_POST['created']  = Time::now();
+				$_POST['modified'] = Time::now();
 
-	    $view->created = Time::display(Time::now());
-	    echo $view;
+		        // Escape HTML chars (XSS attacks)
+		        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
+
+				//Insert
+				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
+				DB::instance(DB_NAME)->insert('posts', $_POST);
+
+
+				//Redirect to posts page
+				Router::redirect("/posts/");
+			}
+		}
 	}
 
 	public function users() {

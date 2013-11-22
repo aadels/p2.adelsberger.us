@@ -1,8 +1,18 @@
-<form method='post' action='/posts/p_add'>
-    <textarea name='content'></textarea><br><br>
-    <input type='Submit' value='Add new post'>
-</form>
+<form method='POST' action='/posts/p_add'>
 
-<!-- Ajax results will go here -->
-<div id='results'></div>
+    <label for='content'>New Post:</label>
+    <br>
+    <textarea name='content' id='content'></textarea>
+
+     <?php if(isset($error)): ?>
+        <div class='error'>
+            Post failed. Please add a post!
+        </div>
+        
+    <?php endif; ?>
+
+    <br>
+    <input type='submit' value='New post'>
+
+</form> 
 
