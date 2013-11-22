@@ -1,6 +1,6 @@
 <?php
 class control_panel_controller extends base_controller{
-    public function control_panel() {
+    public function index() {
 
         # Setup view
             $this->template->content = View::instance('v_posts_control_panel');
