@@ -39,7 +39,7 @@ class posts_controller extends base_controller{
 	    DB::instance(DB_NAME)->insert('posts',$_POST);
 
 	    // Send a simple message back
-	    echo "Your post was added";
+	    echo "You are here!";
 
 	}
 
