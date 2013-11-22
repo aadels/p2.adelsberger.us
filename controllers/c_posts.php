@@ -43,6 +43,7 @@ class posts_controller extends base_controller{
 	    $view = new View('v_posts_p_add');
 
 	    $view->created = Time::display(Time::now());
+	    echo $view;
 	}
 
 	public function users() {
