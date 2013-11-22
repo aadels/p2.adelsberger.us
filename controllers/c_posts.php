@@ -39,8 +39,10 @@ class posts_controller extends base_controller{
 	    DB::instance(DB_NAME)->insert('posts',$_POST);
 
 	    // Send a simple message back
-	    echo "New post was added on ".Time::display(Time::now());
+	    //echo "New post was added on ".Time::display(Time::now());
+	    $view = new View('v_posts_p_add');
 
+	    $view->created = Time::display(Time::now());
 	}
 
 	public function users() {
