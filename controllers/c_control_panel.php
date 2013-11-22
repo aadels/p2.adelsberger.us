@@ -1,5 +1,5 @@
 <?php
-class contol_panel_controller extends base_controller{
+class control_panel_controller extends base_controller{
     public function control_panel() {
 
         # Setup view
@@ -36,5 +36,5 @@ class contol_panel_controller extends base_controller{
         echo json_encode($data);
 }
 
-    
+
 }
