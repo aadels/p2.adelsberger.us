@@ -57,7 +57,7 @@ class posts_controller extends base_controller{
 		
 
 		//Pass data (users and connections) to the view
-		$this->template->content->madlib2 		= $madlib2;
+		$this->template->content		= $madlib2;
 		
 
 		//Render the view
