@@ -1,14 +1,14 @@
 // Set up the options for ajax
-var options = { 
-    type: 'POST',
-    url: '/posts/p_add/',
-    beforeSubmit: function() {
-        $('#results').html("Adding...");
-    },
-    success: function(response) {   
-        $('#results').html(response);
-    } 
-}; 
+ var options = {
+                    
+    type: 'post',
+    url: 'posts/p_add/',
 
-// Using the above options, ajax'ify the form
+    //Hide form and display results
+    success: function(response) {
+        $(".madlib_form").hide();
+        $('#results').html(response);
+	}
+};
+
 $('form').ajaxForm(options);

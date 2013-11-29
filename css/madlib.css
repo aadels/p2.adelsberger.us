@@ -1,4 +1,7 @@
-
+html,
+body {
+    height: 100%;
+}
 .madlib_form #form-fieldset  {
 	background: #EEE;
 	margin:auto;
