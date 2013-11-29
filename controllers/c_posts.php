@@ -30,33 +30,22 @@ class posts_controller extends base_controller{
 		
 	public function p_add(){
 
-	   foreach($_POST as $field => $value){
-            if(empty($value)) {
-            	//If empty post submitted, send error message.
-            	Router::redirect("/posts/add/error");
-        	}    
-        
-
-	        else{   
-	        	//Associate this post with this user
-				$_POST['user_id'] = $this->user->user_id;
-
-				//Unix timestamp for when post is created and modified
-				$_POST['created']  = Time::now();
-				$_POST['modified'] = Time::now();
-
-		        // Escape HTML chars (XSS attacks)
-		        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
-
-				//Insert
-				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
-				DB::instance(DB_NAME)->insert('posts', $_POST);
+	   echo "O ". ($_POST['input1'])." heart, hid with a(n) ". ($_POST['input2'])." face! <br>
+			Did ever dragon keep so fair a ".($_POST['input3']).".
+			 Beautiful ".($_POST['input4'])."! Fiend angelical! <br>
+			Dove-feathered"." ".($_POST['input5'])."! " . ucfirst($_POST['input6'])."ish-ravening lamb! <br>
+			Despised ".($_POST['input7'])." of divinest show! <br>
+			Just opposite to what thou justly seem’st.<br> 
+			A ".($_POST['input8'])." saint, a(n) ". ($_POST['input9'])." villain! <br>
+			O nature, what hadst thou to do in ". ($_POST['input10']). "<br>
+			 When thou didst bower the spirit of a ". ($_POST['input11']). "<br> 
+			In mortal paradise of such ". ($_POST['input12'])." flesh? <br> 
+			Was ever book containing such ". ($_POST['input13']) . "matter <br> 
+			So fairly bound? O, that deceit should dwell <br> 
+			In such a ". ($_POST['input14'])." palace!";
 
 
-				//Redirect to posts page
-				Router::redirect("/posts/");
-			}
-		}
+
 	}
 
 	public function users() {
