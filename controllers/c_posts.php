@@ -30,15 +30,33 @@ class posts_controller extends base_controller{
 		
 	public function p_add(){
 
-	   //Set up the view
-		$this->template->content = View::instance("v_process1");
-		$this->template->title   = "Romeo and Juliet";
+	   foreach($_POST as $field => $value){
+            if(empty($value)) {
+            	//If empty post submitted, send error message.
+            	Router::redirect("/posts/add/error");
+        	}    
+        
 
-		//Pass data (users and connections) to the view
-		//$this->template->content->users 		= $users;
+	        else{   
+	        	//Associate this post with this user
+				$_POST['user_id'] = $this->user->user_id;
 
-		//Render the view
-		echo $this->template;
+				//Unix timestamp for when post is created and modified
+				$_POST['created']  = Time::now();
+				$_POST['modified'] = Time::now();
+
+		        // Escape HTML chars (XSS attacks)
+		        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
+
+				//Insert
+				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
+				DB::instance(DB_NAME)->insert('posts', $_POST);
+
+
+				//Redirect to posts page
+				Router::redirect("/posts/");
+			}
+		}
 	}
 
 	public function users() {
