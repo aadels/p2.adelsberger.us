@@ -10,18 +10,23 @@ class posts_controller extends base_controller{
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
 	}
-	public function add($error = NULL){
+	public function add() {
 
-		//Set up view
-		$this ->template->content = View::instance('v_posts_add');
-		$this->template->title = "New Post";
+    # Setup view
+    $this->template->content = View::instance('v_posts_add');
+    $this->template->title   = "Add a new post";
 
-		//Pass errors, if any
-        $this->template->content->error = $error;
+    # Load JS files
+    $client_files_body = Array(
+        "/js/jquery.form.js",
+        "/js/posts_add.js"
+    );
 
-		//Render Template
-		echo $this->template;
-	}	
+    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
+
+    # Render template
+    echo $this->template;   
+}
 		
 	public function p_add(){
 
@@ -33,20 +38,7 @@ class posts_controller extends base_controller{
         
 
 	        else{   
-	        	//Associate this post with this user
-				$_POST['user_id'] = $this->user->user_id;
-
-				//Unix timestamp for when post is created and modified
-				$_POST['created']  = Time::now();
-				$_POST['modified'] = Time::now();
-
-		        // Escape HTML chars (XSS attacks)
-		        $_POST['content'] = stripslashes(htmlspecialchars($_POST['content']));
-
-				//Insert
-				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
-				DB::instance(DB_NAME)->insert('posts', $_POST);
-
+	     
 
 				//Redirect to posts page
 				Router::redirect("/posts/");
