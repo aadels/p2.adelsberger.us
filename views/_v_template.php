@@ -5,14 +5,17 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <script src="js/respond.js"></script>	
+	    <link href="/css/styles.css" rel="stylesheet">
 	    
 	    <!-- Bootstrap -->
 	    <link href="/css/bootstrap.min.css" rel="stylesheet">
-				
+
+	    <!-- fonts -->
+
+						
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
 		<!--custom css-->
-		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 
 	<body>	
