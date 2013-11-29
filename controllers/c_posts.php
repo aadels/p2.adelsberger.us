@@ -46,7 +46,7 @@ class posts_controller extends base_controller{
 		So fairly bound? O, that deceit should dwell <br> 
 		In such a ". ($_POST['input14'])." palace!";
 		// Insert the post
-    	DB::instance(DB_NAME)->insert('posts',$_POST);
+    	
 		}
 
 	
