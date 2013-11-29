@@ -19,7 +19,6 @@
         <input type='submit' class="button" value='See Mad-lib!'> 
     </fieldset>       
 
-
 </form> 
 
 <!-- Ajax results will go here -->
