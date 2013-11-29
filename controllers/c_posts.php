@@ -10,18 +10,23 @@ class posts_controller extends base_controller{
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
 	}
-	public function add($error = NULL){
+	public function add() {
 
-		//Set up view
-		$this ->template->content = View::instance('v_posts_add');
-		$this->template->title = "New Post";
+    # Setup view
+    $this->template->content = View::instance('v_posts_add');
+    $this->template->title   = "Add a new post";
 
-		//Pass errors, if any
-        $this->template->content->error = $error;
+    # Load JS files
+    $client_files_body = Array(
+        "/js/jquery.form.js",
+        "/js/posts_add.js"
+    );
 
-		//Render Template
-		echo $this->template;
-	}	
+    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
+
+    # Render template
+    echo $this->template;   
+}
 		
 	public function p_add(){
 
