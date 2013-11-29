@@ -14,12 +14,13 @@ class posts_controller extends base_controller{
 
 	    # Setup view
 	    $this->template->content = View::instance('v_posts_add');
-	    $this->template->title   = "Add a new post";
+	    $this->template->title   = "Mad-lib";
 
 	    # Load JS files
 	    $client_files_body = Array(
 	        "/js/jquery.form.js",
 	        "/js/posts_add.js"
+	        "/js/respond.js"
 	    );
 
 	    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
