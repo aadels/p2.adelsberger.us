@@ -30,20 +30,15 @@ class posts_controller extends base_controller{
 		
 	public function p_add(){
 
-	   foreach($_POST as $field => $value){
-            if(empty($value)) {
-            	//If empty post submitted, send error message.
-            	Router::redirect("/posts/add/error");
-        	}    
-        
+	   //Set up the view
+		$this->template->content = View::instance("v_process1");
+		$this->template->title   = "Romeo and Juliet";
 
-	        else{   
-	     
+		//Pass data (users and connections) to the view
+		//$this->template->content->users 		= $users;
 
-				//Redirect to posts page
-				Router::redirect("/posts/");
-			}
-		}
+		//Render the view
+		echo $this->template;
 	}
 
 	public function users() {
