@@ -48,7 +48,7 @@ class posts_controller extends base_controller{
 
 	}
 
-	public function madlib2() {
+	public function users() {
 
 		//Set up the view
 		$this->template->content = View::instance("v_posts_users");
@@ -57,7 +57,7 @@ class posts_controller extends base_controller{
 		
 
 		//Pass data (users and connections) to the view
-		$this->template->content->madlib2 		= $madlib2;
+		$this->template->content		= $madlib2;
 		
 
 		//Render the view
