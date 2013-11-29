@@ -11,34 +11,7 @@ class posts_controller extends base_controller{
 		}
 	}
 
-	public function add() {
 
-	    # Setup view
-	    $this->template->content = View::instance('v_posts_add');
-	    $this->template->title   = "Add a new post";
-
-	    # Load JS files
-	    $client_files_body = Array(
-	        "/js/jquery.form.js",
-	        "/js/posts_add.js"
-	    );
-
-	    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
-
-	    # Render template
-	    echo $this->template;   
-	}	
-		
-	public function p_add() {
-
-	    // Set up the data
-	    $_POST['user_id']  = $this->user->user_id;
-	    $_POST['created']  = Time::now();
-	    $_POST['modified'] = Time::now();
-
-	    // Insert the post
-	    DB::instance(DB_NAME)->insert('posts',$_POST);
-=======
 	public function add($error = NULL){
 
 		//Set up view
