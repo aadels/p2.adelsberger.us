@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <form method='post' action='/posts/p_add'>
     <textarea name='content'></textarea><br><br>
     <input type='Submit' value='Add new post'>
@@ -24,5 +24,5 @@
     <input type='submit' value='New post'>
 
 </form> 
->>>>>>> parent of f4e9795... Updating p2 with js
+
 

@@ -10,7 +10,7 @@ class posts_controller extends base_controller{
 			die("Members only. Please <a href='/users/login'>Login</a>");
 		}
 	}
-<<<<<<< HEAD
+
 	public function add() {
 
 	    # Setup view
@@ -75,21 +75,21 @@ class posts_controller extends base_controller{
 				//Insert
 				//We didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us.
 				DB::instance(DB_NAME)->insert('posts', $_POST);
->>>>>>> parent of f4e9795... Updating p2 with js
+
 
 	    // Send a simple message back
 	    //echo "New post was added on ".Time::display(Time::now());
 	    $view = new View('v_posts_p_add');
 
-<<<<<<< HEAD
+
 	    $view->created = Time::display(Time::now());
 	    echo $view;
-=======
+
 				//Redirect to posts page
 				Router::redirect("/posts/");
 			}
 		}
->>>>>>> parent of f4e9795... Updating p2 with js
+
 	}
 
 	public function users() {
