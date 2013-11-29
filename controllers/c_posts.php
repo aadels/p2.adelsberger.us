@@ -43,15 +43,6 @@ class posts_controller extends base_controller{
 			Was ever book containing such ". ($_POST['input13']) . "matter <br> 
 			So fairly bound? O, that deceit should dwell <br> 
 			In such a ". ($_POST['input14'])." palace!";
-			    # Set up the view
-	    $view = View::instance('v_posts_p_add');
-
-	    # Pass data to the view
-	    $view->created     = $_POST['created'];
-	    
-
-	    # Render the view
-	    echo $view;   
 
 
 
