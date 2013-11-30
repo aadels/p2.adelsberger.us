@@ -1204,5 +1204,5 @@ function log() {
 })( (typeof(jQuery) != 'undefined') ? jQuery : window.Zepto );
 
 window.addEvent('domready', function() {
-    $('form-fieldset').setStyle('height', $('form-fieldsett').getStyle('height').toInt() - 20);
+    $('#form-fieldset').setStyle('height', $('#form-fieldsett').getStyle('height').toInt() - 20);
 });
