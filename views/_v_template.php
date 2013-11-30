@@ -37,33 +37,12 @@
 			            	</div>
 			            	<div class="collapse navbar-collapse pull-right" role="navigation" id="collapse">
 								<ul class="nav navbar-nav">
-									<!-- Menu for users who are logged in-->
-									<?php if($user): ?>
+									
+									
 								        <li>
 								        	<a href='/posts'>View Feed</a> 
 								        </li>
-								        <li> 
-								        	<a href='/posts/add'>Post</a> 
-								        </li>
-								        <li>                       
-								        	<a href='/posts/users'>Follow Others</a> 
-								        </li>
-								        <li>                    
-											<a href='/users/logout'>Logout</a>
-										</li>
-										<li>
-											<a href='/users/profile'>Profile</a>
-										</li>
-
-									<!-- Menu for users who are not logged in-->
-									<?php else: ?>
-										<li>
-											<a href='/users/signup'>Sign up</a>
-										</li>
-										<li>
-											<a href='/users/login'>Log in</a>
-										</li>
-									<?php endif; ?>
+								        
 								</ul>
 							</div>
 						</div><!--close container-->	
