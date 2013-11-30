@@ -84,7 +84,8 @@
 		<!--javascript at end of body-->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/respond.js"></script>	
+		<script src="/js/respond.js"></script>
+		<script src="/js/jquery.form.js"></script>		
 		
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 
