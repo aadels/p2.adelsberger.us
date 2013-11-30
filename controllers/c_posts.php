@@ -27,6 +27,12 @@ class posts_controller extends base_controller{
 	    # Render template
 	    echo $this->template;   
 	}
+		
+	public function p_add(){
+		Router::redirect('/posts/'); 
+	}
+	
+
 
 	 public function index(){
 	 	//Set up the view
