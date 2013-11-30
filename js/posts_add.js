@@ -2,7 +2,7 @@
  var options = {
                     
     type: 'post',
-    url: '/posts/p_add/',
+    url: '/views/v_posts_index',
     beforeSend: function() {   
     //Display a loading message while waiting for the ajax call to complete
         $('#results').html("Loading...");
