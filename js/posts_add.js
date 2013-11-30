@@ -9,7 +9,7 @@
     },
     //Hide form and display results
     success: function(response) {
-        $(".madlib_form #form-fieldset").hide();
+        $("#form-fieldset").hide();
         $('#results').html(response);
 	}
 };
