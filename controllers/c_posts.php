@@ -12,7 +12,8 @@ class posts_controller extends base_controller{
 	    $client_files_body = Array(
 	        "/js/jquery.form.js",
 	        "/js/posts_add.js", 
-	        "/js/respond.js"
+	        "/js/respond.js", 
+	        "/js/bootstrap.js"
 	    );
 
 	    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
