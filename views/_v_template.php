@@ -38,9 +38,9 @@
 			            	<div class="collapse navbar-collapse pull-right" role="navigation" id="collapse">
 								<ul class="nav navbar-nav">
 									
-									
-								        <li>
-								        	<a href='/posts'>View Feed</a> 
+								
+								        <li> 
+								        	<a href='/posts/add'>Post</a> 
 								        </li>
 								        
 								</ul>
