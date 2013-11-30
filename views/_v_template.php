@@ -6,7 +6,6 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    
 	    <link href="/css/styles.css" rel="stylesheet">
-	    <link href="/css/madlib.css" rel="stylesheet">
 	    
 	    <!-- Bootstrap -->
 	    <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -85,7 +84,7 @@
 		<!--javascript at end of body-->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/respond.js"></script>	
+		<script src="js/respond.js"></script>	
 		
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 

@@ -1,4 +1,5 @@
-<?php
+<div>
+	<?php
 echo "O ". ($_POST['input1'])." heart, hid with a(n) ". ($_POST['input2'])." face! <br>
 Did ever dragon keep so fair a ".($_POST['input3']).".
  Beautiful ".($_POST['input4'])."! Fiend angelical! <br>
@@ -12,9 +13,8 @@ In mortal paradise of such ". ($_POST['input12'])." flesh? <br>
 Was ever book containing such ". ($_POST['input13']) . "matter <br> 
 So fairly bound? O, that deceit should dwell <br> 
 In such a ". ($_POST['input14'])." palace!";
-
-
-
+?>
+</div>
 
 
 
