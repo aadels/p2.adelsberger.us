@@ -4,7 +4,7 @@
 		<title><?php if(isset($title)) echo $title . " - "; ?>YaketyYak</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <script src="js/respond.js"></script>	
+	    
 	    <link href="/css/styles.css" rel="stylesheet">
 	    
 	    <!-- Bootstrap -->
@@ -105,6 +105,7 @@
 		<!--javascript at end of body-->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+		<script src="js/respond.js"></script>	
 		
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 
