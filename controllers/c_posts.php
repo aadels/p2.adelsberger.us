@@ -12,28 +12,21 @@ class posts_controller extends base_controller{
 	}
 	public function add() {
 
-    # Setup view
-    $this->template->content = View::instance('v_posts_add');
-    $this->template->title   = "Add a new post";
+	    # Setup view
+	    $this->template->content = View::instance('v_posts_add');
+	    $this->template->title   = "Add a new post";
 
-    # Load JS files
-    $client_files_body = Array(
-        "/js/jquery.form.js",
-        "/js/posts_add.js"
-    );
+	    # Load JS files
+	    $client_files_body = Array(
+	        "/js/jquery.form.js",
+	        "/js/posts_add.js"
+	    );
 
-    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
+	    $this->template->client_files_body = Utils::load_client_files($client_files_body);   
 
-    # Render template
-    echo $this->template;   
-}
-		
-	public function p_add(){
-
-	   Router::redirect("/posts/index");
+	    # Render template
+	    echo $this->template;   
 	}
-
-
 
 	 public function index(){
 	 	//Set up the view
