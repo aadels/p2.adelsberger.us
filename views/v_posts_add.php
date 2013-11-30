@@ -1,7 +1,7 @@
 <form method='POST' action='/posts/p_add'>
 
     <fieldset id= "form-fieldset">
-        Animal: <input type="text" id='madlib' name="input1" required size=20><br>
+        Animal: <input type="text" id='input1' name="input1" required size=20><br>
         Adjective: <input type="text" id='madlib' name="input2" required size=20><br>
         Room in a house: <input type="text" id='madlib' name="input3" required size=20><br>
         Occupation: <input type="text" id='madlib' name="input4" required size=20><br>
