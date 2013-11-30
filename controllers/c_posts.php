@@ -22,7 +22,7 @@ class posts_controller extends base_controller{
 	}
 		
 	public function p_add(){
-		Router::redirect('/posts/'); 
+		Router::redirect('/index/'); 
 	}
 	
 
