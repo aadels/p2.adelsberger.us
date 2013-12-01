@@ -23,7 +23,7 @@ class posts_controller extends base_controller{
 	}
 		
 	public function p_add(){
-		
+		<?php
 		echo "O ". ($_POST['input1'])." heart, hid with a(n) ". ($_POST['input2'])." face! <br>
 		Did ever dragon keep so fair a ".($_POST['input3']).".
 		 Beautiful ".($_POST['input4'])."! Fiend angelical! <br>

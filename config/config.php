@@ -14,7 +14,7 @@ If you want a different default time format for this app, set it below
 */
 
 # What is the name of this app?
-	define('APP_NAME', 'Madlibs');  
+	define('APP_NAME', 'YacketyYak');  
 
 # When email is sent out from the server, where should it come from?
 # Ideally, this should match the domain name
@@ -31,17 +31,17 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'adelsbergerann@gmail.com'); 
 
 # Default DB name for this app
-	//define('DB_NAME', "adelsber_p2_adelsberger_us"); 
+	define('DB_NAME', "adelsber_p2_adelsberger_us"); 
 
 # Timezone
 	define('TIMEZONE', 'America/New_York');
 
 # If your app is going to have outgoing emails, you should fill in your SMTP settings
 # For this you could use gmail SMTP or something like http://sendgrid.com/
-	//define('SMTP_HOST', 'smtp.gmail.com');
-	//define('SMTP_USERNAME', 'adelsbergerann@gmail.com');
-	//define('SMTP_PASSWORD', 'Pippin13');
+	define('SMTP_HOST', 'smtp.gmail.com');
+	define('SMTP_USERNAME', 'adelsbergerann@gmail.com');
+	define('SMTP_PASSWORD', 'Pippin13');
 
 # For extra security, you might want to set different salts than what the core uses
-	//define('PASSWORD_SALT', 'skdjfgi4y394fghl48ylehowf947');
-	//define('TOKEN_SALT', 'lsdhfioruhf94ywoehf94ty94ytp39hfsk');
+	define('PASSWORD_SALT', 'skdjfgi4y394fghl48ylehowf947');
+	define('TOKEN_SALT', 'lsdhfioruhf94ywoehf94ty94ytp39hfsk');
