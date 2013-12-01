@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php if(isset($title)) echo $title . " - "; ?>YaketyYak</title>
+		<title>Madlibs!</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    
@@ -60,17 +60,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">
-                        <p>YaketyYak<br>
-                           +1 features:<br>
-                        </p>
-                        <ul>
-                            <li>Emailing a welcome letter to new users.</li>
-                            <li>Uploading/changing profile picture</li>
-                        </ul>
+                        <p>Madlibs! </p>
                     </div>
                     <div class="col-xs-6">
                         <p class="right pull-right">Ann Adelsberger<br>
-                        	CSCI E-15 Project 2<br>
+                        	CSCI E-15 Project 3<br>
                         	Fall 2013<br>
                             <a href="mailto:adelsbergerann@gmail.com">adelsbergerann@gmail.com</a>
                         </p>
