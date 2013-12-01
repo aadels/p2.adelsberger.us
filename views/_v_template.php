@@ -10,9 +10,6 @@
 	    <!-- Bootstrap -->
 	    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-	    <!-- fonts -->
-
-						
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
 		<!--custom css-->
