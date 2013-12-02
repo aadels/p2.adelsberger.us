@@ -1,15 +1,36 @@
-<?php			
-	echo "O ". ($_POST['input1'])." heart, hid with a(n) ". ($_POST['input2'])." face! <br>
-	Did ever dragon keep so fair a ".($_POST['input3']).".
-	 Beautiful ".($_POST['input4'])."! Fiend angelical! <br>
-	Dove-feathered"." ".($_POST['input5'])."! " . ucfirst($_POST['input6'])."ish-ravening lamb! <br>
-	Despised ".($_POST['input7'])." of divinest show! <br>
-	Just opposite to what thou justly seem’st.<br> 
-	A ".($_POST['input8'])." saint, a(n) ". ($_POST['input9'])." villain! <br>
-	O nature, what hadst thou to do in ". ($_POST['input10']). "<br>
-	 When thou didst bower the spirit of a ". ($_POST['input11']). "<br> 
-	In mortal paradise of such ". ($_POST['input12'])." flesh? <br> 
-	Was ever book containing such ". ($_POST['input13']) . "matter <br> 
-	So fairly bound? O, that deceit should dwell <br> 
-	In such a ". ($_POST['input14'])." palace!";
 
+<div class="row">
+		<aside class="col-sm-2 col-lg-1">
+        	<img class="img-rounded img-post" src="/uploads/avatars/<?= $user->image ?>">
+        </aside>
+        <article class=" col-sm-9 col-sm-offset-1 col-lg-10 col-lg-offset-1 ">
+        	<h3>Hi, <?=$user->first_name?>. Here are the posts from users you are following.</h3>
+        </article>
+</div>
+
+<br><br>
+
+<?php if (count($posts) == 0) :?>
+        <p>You are not following anyone yet. Follow  <a href="/posts/users">other users here!</a></p>
+<?php endif; ?>
+
+<?php foreach($posts as $post): ?>
+
+
+	<div class="row">
+        <aside class="col-xs-2 col-lg-1">
+        	<img class="img-rounded img-post" src="/uploads/avatars/<?=$post['image']?>">
+        </aside>
+    	<article class="col-xs-9 col-xs-offset-1 col-lg-10 col-lg-offset-1 ">
+        	<div class="well post">
+				<h4> <?=$post['first_name']?> <?=$post['last_name'] ?> posted: </h4>
+				<p><?=$post['content'] ?></p>
+				<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
+					<small><?=Time::display($post['created'])?></small>
+				</time>
+			</div>
+		</article>
+	</div>
+
+
+<?php endforeach; ?>

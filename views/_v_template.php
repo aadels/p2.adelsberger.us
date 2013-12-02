@@ -4,9 +4,9 @@
 		<title><?php if(isset($title)) echo $title . " - "; ?>YaketyYak</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    
+	    <script src="js/respond.js"></script>	
 	    <link href="/css/styles.css" rel="stylesheet">
-	    <link href="/css/madlib.css" rel="stylesheet">
+	    
 	    <!-- Bootstrap -->
 	    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -37,12 +37,33 @@
 			            	</div>
 			            	<div class="collapse navbar-collapse pull-right" role="navigation" id="collapse">
 								<ul class="nav navbar-nav">
-									
-								
+									<!-- Menu for users who are logged in-->
+									<?php if($user): ?>
+								        <li>
+								        	<a href='/posts'>View Feed</a> 
+								        </li>
 								        <li> 
 								        	<a href='/posts/add'>Post</a> 
 								        </li>
-								        
+								        <li>                       
+								        	<a href='/posts/users'>Follow Others</a> 
+								        </li>
+								        <li>                    
+											<a href='/users/logout'>Logout</a>
+										</li>
+										<li>
+											<a href='/users/profile'>Profile</a>
+										</li>
+
+									<!-- Menu for users who are not logged in-->
+									<?php else: ?>
+										<li>
+											<a href='/users/signup'>Sign up</a>
+										</li>
+										<li>
+											<a href='/users/login'>Log in</a>
+										</li>
+									<?php endif; ?>
 								</ul>
 							</div>
 						</div><!--close container-->	
@@ -84,8 +105,6 @@
 		<!--javascript at end of body-->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/respond.js"></script>
-		<script src="/js/jquery.form.js"></script>		
 		
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 
