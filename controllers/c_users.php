@@ -190,6 +190,7 @@ class users_controller extends base_controller {
         $this->template->title = "Profile of ".$this->user->first_name . " " . $this->user->last_name; 
        
         //Pass the data to the view
+        //LINE 193
         $this->template->content->user_name = $user_name;
 
         // pass errors, if any
@@ -201,8 +202,10 @@ class users_controller extends base_controller {
     }
     public function profile_image() {
         // if user selects a profile image, upload it
+        //LINE 204
         if ($_FILES['avatar']['error'] == 0)
         {
+
             //upload an image
             $image = Upload::upload($_FILES, "/uploads/avatars/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $this->user->user_id);
 
